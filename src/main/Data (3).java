@@ -1,11 +1,9 @@
-package main;
-
 import java.util.ArrayList;
 
 /**
  * Created by kadal_ijo on 9/4/2015.
  */
-public class Data {
+public class Data implements Comparable<Data> {
     String  TRIP_ID;
     char CALL_TYPE;
     int  ORIGIN_CALL;
@@ -21,8 +19,12 @@ public class Data {
     }
 
     public String toString() {
-        return TRIP_ID + ";" + CALL_TYPE + ";" + ORIGIN_CALL + ";" + ORIGIN_STAND + ";" + TAXI_ID + ";" + TIMESTAMP + ";" + DAY_TYPE + ";" + MISSING_DATA + ";" + POLYLINE;
+        return "\"" + TRIP_ID + "\",\"" + CALL_TYPE + "\",\"" + ORIGIN_CALL + "\",\"" + ORIGIN_STAND + "\",\"" + TAXI_ID + "\",\"" + TIMESTAMP + "\",\"" + DAY_TYPE + "\"";
     }
+	
+	public int compareTo(Data other) {
+		return Integer.compare(TIMESTAMP, other.TIMESTAMP);
+	}
 }
 
 class Coordinate {

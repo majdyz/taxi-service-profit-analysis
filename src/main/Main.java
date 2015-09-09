@@ -1,43 +1,24 @@
 package main;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.util.ArrayList;
-import java.util.Random;
-
 public class Main {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception{
+        Input input = new Input();
 
-        ArrayList<String> mem = new ArrayList<>();
+        Data data;
+        Data dummy = new Data();
 
-        BufferedReader in  = new BufferedReader(new FileReader(Input.INPUT_DIRECTORY+"train_month_1_filtered.csv"));
-        BufferedWriter out = new BufferedWriter(new FileWriter(Input.INPUT_DIRECTORY+"sampling.csv"));
-
-        String inp = "";
-
-        Random rand = new Random();
-
+        int count = 0;
         do {
             try {
-                inp = in.readLine();
-                mem.add(inp);
-            } catch (Exception ex) {
+                data = input.nextData();
+                count++;
+                if (count % 100000 == 0) System.out.println(count);
             }
-        } while (inp != null);
-        
-        ArrayList<String> hue = new ArrayList<>();
-        for (String s : mem) {
-            hue.add(s);
-            if (hue.size() == 400) {
-                int huehue = rand.nextInt(400);
-                out.write(hue.get(huehue) + "\n");
-                hue.clear();
+            catch (Exception ex) {
+                data = dummy;
             }
-        }
+        } while (data != null);
 
-        out.close();
     }
 }

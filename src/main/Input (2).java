@@ -1,5 +1,3 @@
-package main;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
@@ -9,12 +7,11 @@ import java.util.StringTokenizer;
  * Created by kadal_ijo on 9/4/2015.
  */
 public class Input {
-    private static  final String INPUT_DIRECTORY = "E:\\data\\gemastik\\Penyisihan\\Taxi Service\\";
+    private static  final String INPUT_DIRECTORY = "J:\\Dataset Gemastik 2015\\Taxi Service\\";
     private static BufferedReader in;
 
     public Input (String fileName) throws Exception {
-        in = new BufferedReader(new FileReader(INPUT_DIRECTORY + fileName+".csv"));
-        in.readLine();
+        in = new BufferedReader(new FileReader(INPUT_DIRECTORY + fileName));
     }
 
     private ArrayList<Coordinate> parseGPS(String inp) {

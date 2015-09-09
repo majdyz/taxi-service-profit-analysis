@@ -1,0 +1,12 @@
+Anomaly2      : KL Divergence = 0.015632698168624958
+Anomaly3Lower : KL Divergence = 0.044998303321150374
+Anomaly3Upper : KL Divergence = 0.026714006810494257
+Anomaly4      : KL Divergence = 0.03152148657242697
+Anomaly5      : KL Divergence = 0.0472788377243259
+Anomaly6      : KL Divergence = 0.036093264517592136
+Anomaly7      : KL Divergence = 0.07018660930043484
+Anomaly8      : KL Divergence = 0.039705311189136054
+Anomaly9      : KL Divergence = 0.04904454504562369
+Anomaly10     : KL Divergence = 0.026295761592674213
+Anomaly11     : KL Divergence = 0.26752695868379334
+Anomaly12     : KL Divergence = 0.07129923008134906

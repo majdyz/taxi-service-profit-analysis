@@ -5,9 +5,17 @@
 \usepackage[margin=1.5in]{geometry}
 \usepackage{setspace}
 \usepackage{indentfirst}
+\usepackage{changepage}
+\usepackage{titlesec}
 
 \onehalfspacing
 \setlength\parindent{1cm}
+
+\titleformat{\section}[block]{\bfseries}{\thesection.}{1em}{}
+\titleformat{\subsection}[block]{\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}[block]{\bfseries}{\thesubsubsection}{1em}{}
+\titlespacing*{\subsection} {2em}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\titlespacing*{\subsubsection} {4em}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 
 \begin{document}
 
@@ -68,21 +76,31 @@ Pada penelitian ini penulis melakukan pengamatan terhadap data-data yang memilik
 \subsection{Perangkat Lunak}
 
 \subsubsection{WEKA Visualization and Learning Library}
+\begin{adjustwidth}{4em}{0pt}
 
-WEKA adalah learning dan visualization library yang di kembangkan menggunakan bahasaJava. Library ini memiliki banyak implementasi pemprosesan data dan algoritma learning yang cukup beragam seperti Support Vector Machine, Artificial Neural Network, dan tentu algoritma utama yang di pakai pada project ini yaitu K-Means dan Isotonic Regression. Kelebihan library Java dibandingkan library lain adalah nature bahasa Java yang bisa di optimasi dan cukup cepat dibandingkan library lain (dalam kasus ini adalah library python (http://benchmarksgame.alioth.debian.org/u64q/python.html)). Metode analisa pada kasus  ini membutuhkan data secara utuh (tidak melalui metode sampling) sehingga pemrosesan data dengan cepat sangat dibutuhkan pada kasus ini. Sehingga library ini merupakan pilihan yang cukup tepat.
+\hspace{\parindent}WEKA adalah \textit{learning} dan \textit{visualization} \textit{library} yang di kembangkan menggunakan bahasa Java. \textit{Library} ini memiliki banyak implementasi pemrosesan data dan algoritma learning yang cukup beragam seperti Support Vector Machine, Artificial Neural Network, dan tentu algoritma utama yang di pakai pada project ini yaitu K-Means dan Isotonic Regression. Kelebihan library Java dibandingkan library lain adalah nature bahasa Java yang bisa di optimasi dan cukup cepat dibandingkan \textit{library} lain (dalam kasus ini adalah library python \footnote{http://benchmarksgame.alioth.debian.org/u64q/python.html}). Metode analisa pada kasus  ini membutuhkan data secara utuh (tidak melalui metode sampling) sehingga pemrosesan data dengan cepat sangat dibutuhkan pada kasus ini. Sehingga library ini merupakan pilihan yang cukup tepat.
 
+\end{adjustwidth}
 
 \subsubsection{ChartJS dan D3JS}
+\begin{adjustwidth}{4em}{0pt}
+	
+\hspace{\parindent}Chart JS merupakan library dengan bahasa Javascript yang digunakan untuk melakukan visualisasi data dalam bentuk chart. Chart JS ini dipilih karena library ini merupakan library yang cukup ekstensif dan dapat digunakan untuk berbagai pemodelan data. Sedangkan D3JS merupakan library visualisasi Data Driven Document. D3JS digunakan untuk visualisasi data yang lebih kompleks seperti visualisasi heatmap. Dua library menghasilkan web-based visualization yang lebih mudah diolah dibandingkan file dalam bentuk gambar.
 
-Chart JS merupakan library dengan bahasa Javascript yang digunakan untuk melakukan visualisasi data dalam bentuk chart. Chart JS ini dipilih karena library ini merupakan library yang cukup ekstensif dan dapat digunakan untuk berbagai pemodelan data. Sedangkan D3JS merupakan library visualisasi Data Driven Document. D3JS digunakan untuk visualisasi data yang lebih kompleks seperti visualisasi heatmap. Dua library menghasilkan web-based visualization yang lebih mudah diolah dibandingkan file dalam bentuk gambar.
+\end{adjustwidth}
 
 \subsubsection{Python (Scikit-Learn \& GGplot)}
+\begin{adjustwidth}{4em}{0pt}
+		
+\hspace{\parindent}Python pada kasus ini digunakan untuk melakukan prototyping, untuk mengevaluasi data sample yang berjumlah kecil untuk menguji model algoritma yang diberikan pada data. Python dipilih karena kemudahan implementasinya dan dapat kembangkan dengan cepat. Semua algoritma yang di  kembangkan disini diimplementasikan ulang menggunakan Java untuk data utuh.
 
-Python pada kasus ini digunakan untuk melakukan prototyping, untuk mengevaluasi data sample yang berjumlah kecil untuk menguji model algoritma yang diberikan pada data. Python dipilih karena kemudahan implementasinya dan dapat kembangkan dengan cepat. Semua algoritma yang di  kembangkan disini diimplementasikan ulang menggunakan Java untuk data utuh.
+\end{adjustwidth}
 
 \subsection{Dataset}
 
-Dataset yang digunakan adalah data taxi service trip yang merupakan data penggunaan jasa taxi yang tercatat pada (hari Senin 01 Juli 2013 00:00:58 GMT sampai dengan Senin, 30 Juni 2014 19:39:07 GMT). Terdapat 1710670 penggunaan jasa taxi pada interval waktu tersebut, hanya 10 penggunaan yg tidak memiliki keterangan data yang lengkap.
+\begin{adjustwidth}{2em}{0pt}
+
+\hspace{\parindent}Dataset yang digunakan adalah data taxi service trip yang merupakan data penggunaan jasa taxi yang tercatat pada (hari Senin 01 Juli 2013 00:00:58 GMT sampai dengan Senin, 30 Juni 2014 19:39:07 GMT). Terdapat 1710670 penggunaan jasa taxi pada interval waktu tersebut, hanya 10 penggunaan yg tidak memiliki keterangan data yang lengkap.
 
 Dataset memiliki 9 atribut, yaitu \textit{trip\_id}, \textit{call\_type}, \textit{origin\_call}, \textit{origin\_stand}, \textit{taxi\_id}, \textit{timestamp}, \textit{day\_type}, \textit{missing}, dan \textit{polyline}. Penjelasan untuk masing-masing atribut adalah sebagai berikut:
 
@@ -98,20 +116,47 @@ Dataset memiliki 9 atribut, yaitu \textit{trip\_id}, \textit{call\_type}, \texti
 \item{\textit{polyline} : Data koordinat gps (WGS84 format) perjalanan taxi selama 15 detik}
 \end{itemize}
 
+\end{adjustwidth}
+
 \subsection{Algoritma dan Teknik}
 
 \subsubsection{K-Means}
+\begin{adjustwidth}{4em}{0pt}
 
-K-means adalah salah satu metode clustering yang populer digunakan dalam penerapan data mining. K-means dibangun dari ide bahwa 2 buah data yang memiliki kemiripan akan dikelompokkan ke dalam sebuah cluster. Kemiripan diukur dari jarak Euclidean (Euclidean distance) dari 2 buah data. Dalam kasus ini, jarak Euclidean dihitung dengan cara jarak Euclidean antara centroid data perjalanan yang tercatat oleh \textit{gps} pada data.
+\hspace{\parindent}K-means adalah salah satu metode clustering yang populer digunakan dalam penerapan data mining. K-means dibangun dari ide bahwa 2 buah data yang memiliki kemiripan akan dikelompokkan ke dalam sebuah cluster. Kemiripan diukur dari jarak Euclidean (Euclidean distance) dari 2 buah data. Dalam kasus ini, jarak Euclidean dihitung dengan cara jarak Euclidean antara centroid data perjalanan yang tercatat oleh \textit{gps} pada data.
+
+Euclidean distance antara titik a dan b dihitung sebagai berikut:
 \begin{align*}
-	euclidean\_distance(a,b) &= \sqrt{(x_{a} - x_{b})^2 + (y_{a} - y_{b})^2}
+	dist(a,b) &= \sqrt{(x_{a} - x_{b})^2 + (y_{a} - y_{b})^2}
 \end{align*}
+
+\end{adjustwidth}
 
 \subsubsection{Davis Bouldin Index}
 
+\begin{align*}
+DB_{k} &= \frac{1}{k}\sum\limits_{i=1}^k
+\max\limits_{j=1,...,k,i\neq j}\frac{diam(c_i +) + diam(c_j)}{dist(z_i,z_j)}
+\end{align*}
+
+\begin{align*}
+diam(c_i) &= \sqrt{\frac{1}{n_i}\sum\limits_{x\in c_i}dist(x,z_i)^2}
+\end{align*}
+
+\begin{itemize}
+	\setlength{\itemindent}{1cm}
+	\item{$c_i$ adalah cluster}
+	\item{diam($c_i$) adalah diameter cluster $c_i$}
+	\item{n adalah banyaknya titik}
+	\item{$z_i$ adalah centroid cluster $c_i$}
+	\item{dist(a,b) adalah \textit{euclidean distance} antara titik a dan b}
+\end{itemize}
+
 \subsubsection{Haversine Formula}
 
-Haversine Formula adalah salah satu formula trigonometri yang digunakan untuk menghitung great circle distance, yakni jarak terdekat antara 2 titik pada permukaan bola dengan melalui permukaan bola tersebut. Haversine formula menghitung great circle distance dari 2 titik pada permukaan bola dengan parameter latitude dan longitude dari kedua titik tersebut.
+\begin{adjustwidth}{4em}{0pt}
+	
+\hspace{\parindent}Haversine Formula adalah salah satu formula trigonometri yang digunakan untuk menghitung great circle distance, yakni jarak terdekat antara 2 titik pada permukaan bola dengan melalui permukaan bola tersebut. Haversine formula menghitung great circle distance dari 2 titik pada permukaan bola dengan parameter latitude dan longitude dari kedua titik tersebut.
 
 Haversine formula didefinisikan sebagai berikut:
 \begin{align*}
@@ -123,26 +168,35 @@ haversin(\frac{d}{r}) &= haversin(\phi _{2} - \phi _{1}) + cos(\phi _{1})cos(\ph
 	\item{r adalah jari-jari bola}
 	\item{$\phi$ adalah latitude}
 	\item{$\lambda$ adalah longitude}
-	\item{\textit{haversin} adalah fungsi trigonometri $haversin(\theta) = sin^2(\frac{\theta}{2}) = \frac{1-cos(theta)}{2}$}
+	\item{\textit{haversin} adalah fungsi trigonometri $haversin(\theta) = sin^2(\frac{\theta}{2}) = \frac{1-cos(\theta)}{2}$}
 \end{itemize}
 
-\subsubsection{Isotonic Regression}
+\end{adjustwidth}
 
-Isotonic regression merupakan varian dari algoritma regresi yang memepertahankan arah trend dari perdictor regresi (fungsi regresi dipastikan monoton menaik atau menurun). Secara matematis definisi isotonic regression adalah sebagai berikut : diberikan data dengan nilai a1,a2,...,an, regresi F(x) merupakan fungsi monoton $(F(i) <= F(j) | i <= j)$  dengan nilai $\sum\limits_{i=1}^n({f(i)-a_{i}})^2$ seminimal mungkin.
+\subsubsection{Isotonic Regression}
+\begin{adjustwidth}{4em}{0pt}
+	
+\hspace{\parindent}Isotonic regression merupakan varian dari algoritma regresi yang memepertahankan arah trend dari perdictor regresi (fungsi regresi dipastikan monoton menaik atau menurun). Secara matematis definisi isotonic regression adalah sebagai berikut : diberikan data dengan nilai a1,a2,...,an, regresi F(x) merupakan fungsi monoton $(F(i) <= F(j) | i <= j)$  dengan nilai $\sum\limits_{i=1}^n({f(i)-a_{i}})^2$ seminimal mungkin.
+
+\end{adjustwidth}
 
 \subsubsection{Kullback Leibler Divergence}
-
-Kullback Leibler Divergence merupakan salah satu teknik penghitungan divergensi dari distribusi dua nilai (pada umumnya distribusi probabilitas). Kullback Leibler Divergence pada distribusi data  P dan Q  didefinisikan sebagai berikut :
+\begin{adjustwidth}{4em}{0pt}
+\hspace{\parindent}Kullback Leibler Divergence merupakan salah satu teknik penghitungan divergensi dari distribusi dua nilai (pada umumnya distribusi probabilitas). Kullback Leibler Divergence pada distribusi data  P dan Q  didefinisikan sebagai berikut :
 $D_{Kl}(P||Q) = \sum\limits_{i}P(i)ln\frac{P(i)}{Q(i)}$
 dengan P(i) merupakan nilai tendensi dari data ke-i pada dataset-P dan Q(i) merupakan nilai tendensi dari data ke-i pada dataset-Q.
 
 Pada kasus ini, KL Divergence digunakan untuk menghitung divergensi dari dua nilai estimated score yaitu estimasi probabilitas (persentase) profit dari suatu daerah pada cluster tertentu. Estimated score ini  yang akan menjadi attribute utama untuk membandingkan divergensi profit yang akan dianalisis.
 
+\end{adjustwidth}
+
 \subsection{Teknik}
 
 \subsubsection{Preprocessing}
 
-Sebelum dataset diproses, perlu dilakukan langkah-langkah tertentu terlebih dahulu agar dataset tersebut lebih mudah untuk diproses dan sesuai dengan kriteria yang diinginkan.
+\begin{adjustwidth}{4em}{0pt}
+
+\hspace{\parindent}Sebelum dataset diproses, perlu dilakukan langkah-langkah tertentu terlebih dahulu agar dataset tersebut lebih mudah untuk diproses dan sesuai dengan kriteria yang diinginkan.
 
 \begin{itemize}
 	\item{Data Filtering}
@@ -159,15 +213,117 @@ Sebelum dataset diproses, perlu dilakukan langkah-langkah tertentu terlebih dahu
 		
 \end{itemize}
 
-\subsubsection{Modeling}
+\end{adjustwidth}
 
-Setelah data melalui preprocessing, data akan dimodelkan untuk menggambarkan distribusi data tersebut dan hubungan antara data yang satu dengan yang lain. Pada penelitian ini, teknik modeling yang digunakan adalah clustering. yakni penggabungan data-data yang memiliki kemiripan tertentu dalam satu cluster (kelompok).
+\subsubsection{Modeling}
+\begin{adjustwidth}{4em}{0pt}
+	
+\hspace{\parindent}Setelah data melalui preprocessing, data akan dimodelkan untuk menggambarkan distribusi data tersebut dan hubungan antara data yang satu dengan yang lain. Pada penelitian ini, teknik modeling yang digunakan adalah clustering. yakni penggabungan data-data yang memiliki kemiripan tertentu dalam satu cluster (kelompok).
+
+\end{adjustwidth}
 
 \subsubsection{Inference}
 
-Inferensi atau penarikan kesimpulan dilakukan terhadap hasil modelling pada langkah kedua dengan menggunakan konsep-konsep statistik sehingga diperoleh informasi yang diinginkan.
+\begin{adjustwidth}{4em}{0pt}
+	
+\hspace{\parindent}Inferensi atau penarikan kesimpulan dilakukan terhadap hasil modelling pada langkah kedua dengan menggunakan konsep-konsep statistik sehingga diperoleh informasi yang diinginkan.
+
+\end{adjustwidth}
 
 \section{Desain dan Implementasi}
 
+\subsection{title}
+
+\begin{tabular}{ | l | l | l | l | p{3cm} | }
+	\hline
+	Cluster ID & Number of Data & Centroid Latitude & Centroid Longitude & Region Name \\ \hline
+	
+	0 &	52570 &	41.1767 & -8.5408 &	Rua Doutor Raúl Chagas 77, 4435-124 Rio Tinto \\ \hline
+	
+	1 &
+	3265 &
+	40.909 &
+	-8.5939 &
+	Travessa da Estrada Nova 101, 3885-062 Arada \\ \hline
+	
+	2 &
+	476 &
+	41.129 &
+	-7.592 &
+	EM512 5, 5120 \\ \hline
+	
+	3 &
+	171187 &
+	41.1747 &
+	-8.653 &
+	Rua Conde Covilhã 1460, 4100 Porto \\ \hline
+	
+	4 &
+	229332 &
+	41.1826 &
+	-8.6051 &
+	Alameda Professor Hernâni Monteiro 813, 4200 Porto \\ \hline
+	
+	5 &
+	705847 &
+	41.1444 &
+	-8.6145 &
+	Travessa do Ferraz 2, 4050-141 Porto \\ \hline
+	
+	6 &
+	2402 &
+	41.341 &
+	-8.3149 &
+	CM1128 404, 4620 \\ \hline
+	
+	7 &
+	453884 &
+	41.1611 &
+	-8.6275 &
+	Avenida da França 352, 4050-278 Porto \\ \hline
+	
+	8 &
+	287113 &
+	41.155 &
+	-8.6448 &
+	IC23, 4150-172 Porto \\ \hline
+	
+	9 &
+	476618 &
+	41.1601 &
+	-8.5832 &
+	Rua José Monteiro da Costa, 4350-307 Porto \\ \hline
+	
+	10 &
+	76135 &
+	41.2426 &
+	-8.6709 &
+	Rua da Caralinda 259, 4470-558 Vila Nova da Telha \\ \hline
+	
+	11 &
+	189885 &
+	41.1576 &
+	-8.6697 &
+	Rua Afonso Baldaia 368, 4150-002 Porto \\ \hline
+	
+	12 &
+	595941 &
+	41.1528 &
+	-8.6052 &
+	Rua de Santa Catarina 753, 4000-425 Porto \\ \hline
+	
+	13 &
+	80643 &
+	41.1782 &
+	-8.6877 &
+	Rua Dom João i 394, 4450-163 Matosinhos \\ \hline
+	
+	14 &
+	182 &
+	39.2218 &
+	-8.9714 &
+	IC2, 2065 Alcoentre \\
+	\hline
+\end{tabular}
 
 \end{document}

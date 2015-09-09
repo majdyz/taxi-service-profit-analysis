@@ -9,12 +9,13 @@ import java.util.StringTokenizer;
  * Created by kadal_ijo on 9/4/2015.
  */
 public class Input {
-    private static  final String INPUT_DIRECTORY = "E:\\data\\gemastik\\Penyisihan\\Taxi Service\\train.csv";
+    public static  final String INPUT_DIRECTORY = "E:\\data\\gemastik\\Penyisihan\\Taxi Service\\clean\\";
     private static BufferedReader in;
+    public static String header;
 
     public Input () throws Exception {
         in = new BufferedReader(new FileReader(INPUT_DIRECTORY));
-        in.readLine();
+        header = in.readLine();
     }
 
     private ArrayList<Coordinate> parseGPS(String inp) {
@@ -62,14 +63,14 @@ public class Input {
         temp       = token.nextToken();
         data.DAY_TYPE    = temp.length() > 0 ? temp.charAt(0) : '-';
 
-        temp    = token.nextToken();
-        if (temp.charAt(0) == 'F') {
-            while (token.hasMoreTokens()) {
-                double longitude = Double.parseDouble(token.nextToken());
-                double latitude = Double.parseDouble(token.nextToken());
-                data.POLYLINE.add(new Coordinate(latitude, longitude));
-            }
-        }
+        temp       = token.nextToken();
+        data.CENTROID_LATITUDE = temp.length() > 0 ? Double.parseDouble(temp) : 0;
+
+        temp       = token.nextToken();
+        data.CENTROID_LONGITUDE = temp.length() > 0 ? Double.parseDouble(temp) : 0;
+
+        temp       = token.nextToken();
+        data.COST = temp.length() > 0 ? Double.parseDouble(temp) : 0;
 
         return data;
     }

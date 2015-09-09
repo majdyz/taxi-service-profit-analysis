@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Line Chart</title>
+		<script src="../Chart.js"></script>
+	</head>
+	<body>
+		<div style="width:100%">
+			<div>
+				<canvas id="canvas"></canvas>
+			</div>
+		</div>
+
+
+	<script>
+		/** Color Seed **/
+	    Colors = {};
+	    Colors.index = 0;
+	    Colors.names = {
+	        aqua: "#00ffff",
+	        black: "#000000",
+	        blue: "#0000ff",
+	        brown: "#a52a2a",
+	        darkblue: "#00008b",
+	        darkcyan: "#008b8b",
+	        darkgreen: "#006400",
+	        darkkhaki: "#bdb76b",
+	        darkmagenta: "#8b008b",
+	        darkolivegreen: "#556b2f",
+	        darkorange: "#ff8c00",
+	        darkorchid: "#9932cc",
+	        darkred: "#8b0000",
+	        darksalmon: "#e9967a",
+	        darkviolet: "#9400d3",
+	        fuchsia: "#ff00ff",
+	        gold: "#ffd700",
+	        green: "#008000",
+	        indigo: "#4b0082",
+	        khaki: "#f0e68c",
+	        lightblue: "#add8e6",
+	        lightgreen: "#90ee90",
+	        lightpink: "#ffb6c1",
+	        lime: "#00ff00",
+	        magenta: "#ff00ff",
+	        maroon: "#800000",
+	        navy: "#000080",
+	        olive: "#808000",
+	        orange: "#ffa500",
+	        pink: "#ffc0cb",
+	        purple: "#800080",
+	        red: "#ff0000",
+	        yellow: "#ffff00"
+	    };
+	    Colors.gray = {
+	        name: "gray",
+	        rgb: "#7e7e7e",
+	        rgba: "rgba(" + (8289918 >> 16) + "," + (8289918 >> 8) + "," + (8289918 & 255) + "," + (0.1) + ")"
+	    };
+	    Colors.random = function () {
+	        var result = Object.keys(Colors.names)[(Colors.index) % (Object.keys(Colors.names).length)];
+	        var num = parseInt(this.names[result].slice(1), 16);
+	        Colors.index++;
+	        var gba = [num >> 16 & 255, num >> 8 & 255, num & 255, 0.1];
+
+	        return {
+	            name: result,
+	            rgb: this.names[result],
+	            rgba: "rgba(" + gba[0] + "," + gba[1] + "," + gba[2] + "," + gba[3] + ")"
+	        };
+	    };
+
+	    var Color1 = Colors.random();
+	    var Color2 = Colors.random();
+	    var Color3 = Colors.random();
+	    var Color4 = Colors.random();
+	    var Color5 = Colors.random();
+	    var Color6 = Colors.random();
+	    var Color7 = Colors.random();
+	    var Color8 = Colors.random();
+	    var Color9 = Colors.random();
+	    var Color10 = Colors.random();
+	    var Color11 = Colors.random();
+	    var Color12 = Colors.random();
+	    var Color13 = Colors.random();
+	    var Color14 = Colors.random();
+	    var Color15 = Colors.random();
+
+		var lineChartData = {
+			labels: ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21",
+					 "22","23","24","25","26","27","28","29","30","31"],
+			datasets: [  
+
+			
+ 
+ { label: "Cluster5", fillColor: Color5.rgba, strokeColor: Color5.rgb, pointColor: Colors.gray.rgb, pointStrokeColor: "#fff", pointHighlightFill: "#fff", pointHighlightStroke: Colors.gray.rgba, data: ["0.056989866679596685","0.08002826976427278","0.07967105404283766","0.07824604391023272","0.08169533164264438","0.0698751668940958","0.05894174644966798","0.057309061569472054","0.08604250403551357","0.08480962790224145","0.07828721588461235","0.08220422657814119","0.07593764197270438","0.05349309411066226","0.05696493637050603","0.07474436296197419","0.08402878557237946","0.08529375442290246","0.08160781288162616","0.09071869468393357","0.059218209780857956","0.060377105703596536","0.07977285521739645","0.0791288219276305","0.08051101536291651","0.0860360872729847","0.0947708704411746","0.06161729045928637","0.0622484387236152","0.085151021273526" ] },
+
+ 
+{ label: "Reggression5", fillColor: Color5.rgba, strokeColor: Color5.rgb, pointColor: Colors.gray.rgb, pointStrokeColor: "#fff", pointHighlightFill: "#fff", pointHighlightStroke: Colors.gray.rgba, data: ["0.06377224465590753","0.06358668509665658","0.06340112553740561","0.06321556597815466","0.0630300064189037","0.06284444685965275","0.0626588873004018","0.062473327741150844","0.06228776818189989","0.06210220862264894","0.061916649063397985","0.061731089504147026","0.06154552994489607","0.06135997038564512","0.06117441082639417","0.060988851267143214","0.06080329170789226","0.0606177321486413","0.06043217258939035","0.060246613030139395","0.06006105347088844","0.05987549391163749","0.05968993435238654","0.059504374793135584","0.059318815233884624","0.05913325567463367","0.05894769611538272","0.058762136556131765","0.05857657699688081","0.05839101743762985","0.0582054578783789" ] },
+
+ { label: "Cluster10", fillColor: Color10.rgba, strokeColor: Color10.rgb, pointColor: Colors.gray.rgb, pointStrokeColor: "#fff", pointHighlightFill: "#fff", pointHighlightStroke: Colors.gray.rgba, data: ["0.13739951664655786","0.14319543652123964","0.14163060921842066","0.14252188524305315","0.1371922575569455","0.1427863373358353","0.134904997047961","0.12714224728596363","0.14256930649817326","0.14623208604955096","0.14032288631409792","0.13765180009435463","0.13175886698064382","0.13022596113420906","0.11918684827947597","0.13882866242449282","0.14206096792776007","0.13268155583156793","0.1384267489582546","0.1317164733420661","0.12125517168304994","0.13404072198540826","0.14824192415711296","0.13958520305806216","0.14853306345688355","0.13939077057369975","0.14438775721409755","0.13912251354601846","0.12886304100432858","0.15680815037422174" ] },
+ 
+ 
+
+
+{ label: "Reggression10", fillColor: Color10.rgba, strokeColor: Color10.rgb, pointColor: Colors.gray.rgb, pointStrokeColor: "#fff", pointHighlightFill: "#fff", pointHighlightStroke: Colors.gray.rgba, data: ["0.1446970109016742","0.14501375451181936","0.14533049812196452","0.14564724173210972","0.14596398534225488","0.14628072895240005","0.1465974725625452","0.1469142161726904","0.14723095978283557","0.14754770339298073","0.14786444700312593","0.1481811906132711","0.14849793422341626","0.14881467783356142","0.1491314214437066","0.14944816505385178","0.14976490866399694","0.15008165227414214","0.1503983958842873","0.15071513949443247","0.15103188310457766","0.15134862671472282","0.151665370324868","0.15198211393501315","0.15229885754515834","0.1526156011553035","0.15293234476544867","0.15324908837559387","0.15356583198573903","0.1538825755958842","0.15419931920602936" ] },
+
+			]
+		};
+
+		var size = lineChartData.datasets[0].data.length;
+		for (var i = 0; i<lineChartData.datasets.length; i++) {
+			if (size > lineChartData.datasets[i].data.length) size = lineChartData.datasets[i].data.length;
+		}
+
+		for (var i = 0; i<lineChartData.datasets.length; i++) {
+			if ((i-1) % 2 == 0) {
+				var p = lineChartData.datasets[i-1].data[0];
+				var q = lineChartData.datasets[i].data[0];
+				var KL = p*Math.log(p/q);
+
+				for (var j = 0; j < size; j++) {
+					var p = lineChartData.datasets[i-1].data[j];
+					var q = lineChartData.datasets[i].data[j];
+					// console.log(p + " " + q);
+
+					if (KL < Math.abs(p*Math.log(p/q))) {
+						KL = Math.abs(p*Math.log(p/q));
+					}
+				}
+				console.log("KL for " + lineChartData.datasets[i-1].label + " and " + lineChartData.datasets[i].label + " = " + KL);
+			}
+		}
+
+	window.onload = function(){
+		var ctx = document.getElementById("canvas").getContext("2d");
+		window.myLine = new Chart(ctx).Line(lineChartData, {
+			responsive: true,
+			multiTooltipTemplate: "<%= datasetLabel %> - <%= value %>"
+		});
+	}
+
+
+	</script>
+	</body>
+</html>

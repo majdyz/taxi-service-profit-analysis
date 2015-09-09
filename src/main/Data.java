@@ -14,6 +14,10 @@ public class Data {
     int  TIMESTAMP;
     char DAY_TYPE;
     boolean  MISSING_DATA;
+    double CENTROID_LATITUDE;
+    double CENTROID_LONGITUDE;
+    double COST;
+
     ArrayList<Coordinate> POLYLINE;
 
     public Data () {

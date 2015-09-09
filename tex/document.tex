@@ -1,0 +1,69 @@
+\documentclass{article}
+\usepackage{graphicx}
+
+\begin{document}
+
+\begin{titlepage}
+
+\begin{center}
+\vspace*{1cm}
+
+\textbf{Data Mining}
+
+\vspace{0.5cm}
+Mining Data from Dataset
+
+\vspace{1.5cm}
+
+\textbf{Sebut Saja Zamil}
+
+\vspace{1.5cm}
+
+\includegraphics[width=0.6\textwidth]{okk2015.jpg}
+
+\vspace{1.5cm}
+
+A thesis presented for the degree of\\
+Medalist of IOI
+
+\vspace{0.8cm}
+
+Pelatnas 4\\
+Tim Olimpiade Komputer Indonesia\\
+Indonesia\\
+10 August 2015
+
+\end{center}
+\end{titlepage}
+
+\section{Pendahuluan}
+
+\subsection{Latar Belakang}
+
+\paragraph{}
+Data, pada zaman sekarang, telah menjadi elemen penting dalam berbagai aspek kehidupan. Dari segi volume, ukuran data sangatlah besar. Dari segi pergerakan data, sangat banyak data yang bergerak begitu cepat dan perlu diproses dalam waktu singkat. Dari segi variasi, format penyajian data sangat beragam. Selain itu, ketidakpastian dalam data juga bervariasi. Dalam pendidikan, perekonomian, bahkan pertahanan dan keamanan negara, data sangatlah penting.
+
+\paragraph{}
+Agar dapat diperoleh informasi yang bermanfaat dari data yang bervariasi tersebut, telah dikembangkan berbagai teknik pengolahan data. Sebuah subbidang dari ilmu komputer, yaitu data mining, merupakan bidang yang membahas teknik pengolahan data berskala besar untuk mendapatkan pola atau informasi dari data tersebut. Dalam data mining, digunakan teknik yang melibatkan machine learning, artificial intelligence, statistik, dan sebagainya.
+
+\subsection{Tujuan Penulisan}
+
+\paragraph{}
+Dalam analisis ini, yang kami tekankan adalah anomaly detection pada pola pendapatan taksi secara individual pada jangka waktu tertentu. Anomali yang mungkin terjadi sebagai contoh adalah pendapatan taksi yang meningkat atau menurun secara drastis. Melalui informasi tersebut, dapat diperoleh sejumlah taksi yang mengalami anomali pendapatan terbesar secara positif (meningkat) atau negatif (menurun). Dengan demikian, dapat dilakukan pemeriksaan lebih lanjut pada taksi-taksi tersebut mengenai penyebab anomali oleh pihak perusahaan (yang tidak dibahas pada makalah ini).
+
+\section{Isi}
+
+\subsection{Metode}
+
+\subsubsection{Shark Learning Library}
+
+\paragraph{}
+Shark Learning Library adalah learning library yang di kembangkan menggunakan bahasa C++. Library ini memiliki banyak implementasi pemprosesan data dan algoritma learning yang cukup beragam seperti Support Vector Machine, Artificial Neural Network, dan tentu algoritma utama yang di pakai pada project ini yaitu K-Means dan LASSO Regression. Kelebihan library ini dibandingkan library lain adalah runtime yang jauh lebih cepat dibandingkan library-library learning pada bahasa lain. Metode analisa pada kasus  ini membutuhkan data secara utuh (tidak melalui metode sampling) sehingga pemrosesan data yang cepat sangat dibutuhkan pada kasus ini. Sehingga library ini merupakan pilihan yang cukup tepat.
+
+\subsubsection{Phyton}
+
+\paragraph{}
+Python pada kasus ini digunakan untuk melakukan prototyping, untuk mengevaluasi data sample yang berjumlah kecil untuk menguji model algoritma yang diberikan pada data. Python dipilih karena kemudahan implementasinya dan dapat kembangkan dengan cepat. Semua algoritma yang dikembangkan disini diimplementasikan ulang menggunakan C++ untuk data utuh.
+
+	
+\end{document}

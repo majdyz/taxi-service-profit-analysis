@@ -38,14 +38,13 @@
 
 \textbf{Analisa Profit Divergence pada Data Pemesanan Taksi\\ Menggunakan Metode Kulback Leibler Divergence\\dengan Isotonic Regression dan K-Means Clustering}
 
-\vspace{1.5cm}
+\vspace{3cm}
 \textbf{Disusun oleh:}\\
 Joshua Casey Darian Gunawan\\
 Muhammad Zaky Khairuddin\\
 Zamil Majdy
-\vspace{1.5cm}
+\vspace{4cm}
 
-\vspace{0.8cm}
 ZJZ\\
 FAKULTAS ILMU KOMPUTER\\
 UNIVERSITAS INDONESIA\\
@@ -69,11 +68,11 @@ Dalam studi ilmu komputer, terdapat bidang yang khusus mempelajari pengolahan da
 
 Analisa yang kami lakukan bertujuan mencari dan menganlisa fenomena dan anomali keuntungan pasar pada penggunaan layanan taksi dengan pembagian berdasarkan daerah. Anomali yang dicari adalah anomali divergensi keuntungan, yakni perbedaan drastis keuntungan pada suatu daerah dengan skala waktu per bulan. Perbedaan drastis ini dapat berupa penurunan maupun kenaikan yang drastis. Keuntungan per daerah ini dihitung dengan memperhitungkan perjalanan-perjalanan dengan daerah tersebut sebagai titik awal maupun titik tujuan perjalanan.
 
-Manfaat yang dapat diperoleh dari analisa ini adalah identifikasi daerah yang memiliki tingkat permintaan yang berubah drastis. Dengan mengetahui daerah-daerah yang mengalami perubahan tingkat permintaan yang tinggi, dapat dilakukan analisa bisnis yang memadai untuk memaksimalkan keuntungan, misalnya menambah armada di sekitar daerah yang permintaannya menaik drastis. Analisa ini akan sangat berguna apabila dilakukan stream data baru secara terus menerus perbulannya, agar hasil analisa ini dapat digunakan untuk mengambil kebijakan bisnis secara lebih real time.  Analisa dari segi bisnis secara khusus tidak dibahas dalam makalah ini.
+Manfaat yang dapat diperoleh dari analisa ini adalah identifikasi daerah yang memiliki tingkat permintaan yang berubah drastis. Dengan mengetahui daerah-daerah yang mengalami perubahan tingkat permintaan yang tinggi, dapat dilakukan analisa bisnis yang memadai untuk memaksimalkan keuntungan, misalnya menambah armada di sekitar daerah yang permintaannya menaik drastis. Analisa ini akan sangat berguna apabila dilakukan \textit{stream} data baru secara terus menerus perbulannya, agar hasil analisa ini dapat digunakan untuk mengambil kebijakan bisnis secara lebih\textit{ real time}.  Analisa dari segi bisnis secara khusus tidak dibahas dalam makalah ini.
 
 \section{Batasan}
 
-Pada penelitian ini penulis melakukan pengamatan terhadap data yang memiliki daytype A, yakni hari kerja. Hal ini dilakukan karena daytype A paling umum ditemui diantara ketiga daytype tersebut, sementara setiap daytype tentu memiliki distribusi dan karakteristik yang sangat berbeda, sehingga tidak mungkin melakukan evaluasi yang sama terhadap ketiga daytype tersebut. Karena data yang harus diproses relatif banyak, algoritma yang digunakan adalah algoritma-algoritma yang memiliki kompleksitas rendah, misalnya k-means clustering algorithm dan  isotonic regression yang memiliki kompleksitas linear terhadap banyaknya data.
+Pada penelitian ini penulis melakukan pengamatan terhadap data yang memiliki \textit{daytype} A, yakni hari kerja. Hal ini dilakukan karena \textit{daytype} A paling umum ditemui diantara ketiga \textit{daytype} yang ada, sementara setiap \textit{daytype} tentu memiliki distribusi dan karakteristik yang sangat berbeda, sehingga tidak mungkin melakukan evaluasi yang sama terhadap ketiga \textit{daytype} tersebut. Karena data yang harus diproses relatif banyak, algoritma yang digunakan adalah algoritma-algoritma yang memiliki kompleksitas rendah, misalnya \textit{k-means clustering algorithm} dan  \textit{isotonic regression} yang memiliki kompleksitas linear terhadap banyaknya data.
 
 \section{Metode}
 
@@ -82,27 +81,27 @@ Pada penelitian ini penulis melakukan pengamatan terhadap data yang memiliki day
 \subsubsection{WEKA Visualization and Learning Library}
 \begin{adjustwidth}{4em}{0pt}
 
-\hspace{\parindent}WEKA adalah \textit{learning} dan \textit{visualization} \textit{library} yang di kembangkan menggunakan bahasa Java. \textit{Library} ini memiliki banyak implementasi pemrosesan data dan algoritma learning yang cukup beragam seperti Support Vector Machine, Artificial Neural Network, dan tentu algoritma utama yang di pakai pada project ini yaitu K-Means dan Isotonic Regression (algoritma ini ada pada Weka Additional Package). Kelebihan library Java dibandingkan library lain adalah nature bahasa Java yang bisa di optimasi dan cukup cepat dibandingkan \textit{library} lain (dalam kasus ini adalah library python \footnote{http://benchmarksgame.alioth.debian.org/u64q/python.html}). Metode analisa pada kasus  ini membutuhkan data secara utuh (tidak melalui metode sampling) sehingga pemrosesan data dengan cepat sangat dibutuhkan pada kasus ini. Sehingga library ini merupakan pilihan yang cukup tepat.
+\hspace{\parindent}WEKA adalah \textit{learning} dan \textit{visualization} \textit{library} yang di kembangkan menggunakan bahasa Java. \textit{Library} ini memiliki banyak implementasi pemrosesan data dan algoritma learning yang cukup beragam seperti \textit{Support Vector Machine}, \textit{Artificial Neural Network}, dan tentu algoritma utama yang di pakai pada project ini yaitu \textit{K-Means} dan \textit{Isotonic Regression} (algoritma ini ada pada Weka Additional Package). Kelebihan library Java dibandingkan library lain adalah nature bahasa \textit{Java} yang bisa di optimasi dan cukup cepat dibandingkan \textit{library} lain (dalam kasus ini adalah \textit{library} \textit{python} \footnote{http://benchmarksgame.alioth.debian.org/u64q/python.html}). Metode analisa pada kasus  ini membutuhkan data secara utuh (tidak melalui metode \textit{sampling}) sehingga pemrosesan data dengan cepat sangat dibutuhkan pada kasus ini. Oleh karena itu, \textit{library} ini merupakan pilihan yang cukup tepat.
 
 \end{adjustwidth}
 
 \subsubsection{ChartJS}
 \begin{adjustwidth}{4em}{0pt}
 	
-\hspace{\parindent}Chart JS merupakan library dengan bahasa Javascript yang digunakan untuk melakukan visualisasi data dalam bentuk chart. Chart JS ini dipilih karena library ini merupakan library yang cukup ekstensif dan dapat digunakan untuk berbagai pemodelan data.
+\hspace{\parindent}\textit{Chart JS} merupakan \textit{library} dengan bahasa \textit{Javascript} yang digunakan untuk melakukan visualisasi data dalam bentuk \textit{chart}. \textit{Chart JS} ini dipilih karena \textit{library} ini merupakan \textit{library} yang cukup ekstensif dan dapat digunakan untuk berbagai pemodelan data.
 
 \end{adjustwidth}
 
 \subsubsection{Google Fusion Tables}
 \begin{adjustwidth}{4em}{0pt}
 	
-\hspace{\parindent}Google Fusion Tables adalah sebuah aplikasi web untuk visualisasi dan sharing data. Google Fusion Tables dapat membuat visualisasi berbentuk peta dengan bantuan Google Maps. Aplikasi ini digunakan dalam pembuatan heatmap. Keunggulan dari aplikasi ini adalah visualisasi yang dihasilkan cukup jelas dan sesuai dengan kebutuhan pengolahan data.
+\hspace{\parindent}\textit{Google Fusion Tables} adalah sebuah aplikasi web untuk visualisasi dan sharing data. \textit{Google Fusion Tables} dapat membuat visualisasi berbentuk peta dengan bantuan \textit{Google Maps}. Aplikasi ini digunakan dalam pembuatan \textit{heatmap}. Keunggulan dari aplikasi ini adalah visualisasi yang dihasilkan cukup jelas dan sesuai dengan kebutuhan pengolahan data.
 
 \end{adjustwidth}
 \subsubsection{Python (Scikit-Learn \& GGplot)}
 \begin{adjustwidth}{4em}{0pt}
 		
-\hspace{\parindent}Python pada kasus ini digunakan untuk melakukan prototyping, untuk mengevaluasi data sample yang berjumlah kecil untuk menguji model algoritma yang diberikan pada data. Python dipilih karena kemudahan implementasinya dan dapat kembangkan dengan cepat. Semua algoritma yang dikembangkan disini diimplementasikan ulang menggunakan Java untuk data utuh.
+\hspace{\parindent}\textit{Python} pada kasus ini digunakan untuk melakukan prototyping, untuk mengevaluasi data sample yang berjumlah kecil untuk menguji model algoritma yang diberikan pada data. \textit{Python} dipilih karena kemudahan implementasinya dan dapat kembangkan dengan cepat. Semua algoritma yang dikembangkan disini diimplementasikan ulang menggunakan \textit{Java} untuk data utuh.
 
 \end{adjustwidth}
 
@@ -110,7 +109,7 @@ Pada penelitian ini penulis melakukan pengamatan terhadap data yang memiliki day
 
 \begin{adjustwidth}{2em}{0pt}
 
-\hspace{\parindent}Dataset yang digunakan adalah data taxi service trip yang merupakan data penggunaan jasa taxi yang tercatat pada (hari Senin 01 Juli 2013 00:00:58 GMT sampai dengan Senin, 30 Juni 2014 19:39:07 GMT). Terdapat 1710670 penggunaan jasa taxi pada interval waktu tersebut, hanya 10 penggunaan yg tidak memiliki keterangan data yang lengkap.
+\hspace{\parindent}Dataset yang digunakan adalah data \textit{taxi service trip} yang merupakan data penggunaan jasa taksi yang tercatat pada (hari Senin 01 Juli 2013 00:00:58 GMT sampai dengan Senin, 30 Juni 2014 19:39:07 GMT). Terdapat 1710670 penggunaan jasa taksi pada interval waktu tersebut, hanya 10 penggunaan yang tidak memiliki keterangan data yang lengkap.
 
 Dataset memiliki 9 atribut, yaitu \textit{trip\_id}, \textit{call\_type}, \textit{origin\_call}, \textit{origin\_stand}, \textit{taxi\_id}, \textit{timestamp}, \textit{day\_type}, \textit{missing}, dan \textit{polyline}. Penjelasan untuk masing-masing atribut adalah sebagai berikut:
 
@@ -133,14 +132,14 @@ Dataset memiliki 9 atribut, yaitu \textit{trip\_id}, \textit{call\_type}, \texti
 \subsubsection{K-Means}
 \begin{adjustwidth}{4em}{0pt}
 
-\hspace{\parindent}K-means adalah salah satu metode clustering yang populer digunakan dalam penerapan data mining. K-means dibangun dari ide bahwa 2 buah data yang memiliki kemiripan akan dikelompokkan ke dalam sebuah cluster. Kemiripan diukur dari jarak Euclidean (Euclidean distance) dari 2 buah data. Dalam kasus ini, jarak Euclidean dihitung dengan cara jarak Euclidean antara centroid data perjalanan yang tercatat oleh \textit{gps} pada data.
+\hspace{\parindent}\textit{K-means} adalah salah satu metode \textit{clustering} yang populer digunakan dalam penerapan \textit{data mining}. \textit{K-means} dibangun dari ide bahwa 2 buah data yang memiliki kemiripan akan dikelompokkan ke dalam sebuah \textit{cluster}. Kemiripan diukur dari jarak Euclidean (\textit{Euclidean distance}) dari 2 buah data. Dalam kasus ini, jarak Euclidean dihitung dengan cara jarak Euclidean antara \textit{centroid} data perjalanan yang tercatat oleh \textit{gps} pada data.
 
-Euclidean distance antara titik a dan b dihitung sebagai berikut:
+\textit{Euclidean distance} antara titik a dan b dihitung sebagai berikut:
 \begin{align*}
 	dist(a,b) &= \sqrt{(x_{a} - x_{b})^2 + (y_{a} - y_{b})^2}
 \end{align*}
 
-Sebanyak k buah centroid (titik tengah) diambil secara acak. Kemudian dilakukan iterasi hingga konvergen. 
+Sebanyak k buah \textit{centroid} (titik tengah) diambil secara acak, kemudian dilakukan iterasi hingga konvergen. 
 
 \end{adjustwidth}
 
@@ -148,7 +147,7 @@ Sebanyak k buah centroid (titik tengah) diambil secara acak. Kemudian dilakukan 
 
 \begin{adjustwidth}{4em}{0pt}
 
-\hspace{\parindent}Permasalahan terbesar dari \textit{k-means} adalah menentukan nilai k terbaik. Sulit untuk mengetahui berapa \textit{cluster} yang dapat terbentuk dari sebuah dataset. Untuk itu, penulis akan melakukan percobaan dengan beberapa buah nilai k dan menentukan mana yang terbaik dengan menghitung Davies Bouldin Index dari masing-masing \textit{cluster}.
+\hspace{\parindent}Permasalahan terbesar dari \textit{k-means} adalah menentukan nilai k terbaik. Sulit untuk mengetahui berapa \textit{cluster} yang dapat terbentuk dari sebuah dataset. Untuk itu, penulis akan melakukan percobaan dengan beberapa buah nilai k dan menentukan mana yang terbaik dengan menghitung \textit{Davies Bouldin Index} dari masing-masing \textit{cluster}.
 
 \textit{Davies Bouldin Index} (DBI) adalah indeks pengukuran validitas model \textit{clustering} berdasarkan kemiripan dan perbedaan dari \textit{cluster-cluster}. Model \textit{clustering} dinilai semakin baik apabila anggota-anggota \textit{cluster}-nya saling berdekatan dan jarak antar \textit{cluster} semakin jauh. Nilai DBI yang lebih rendah menandakan model \textit{clustering} yang lebih baik.
 
@@ -164,10 +163,10 @@ diam(c_i) &= \sqrt{\frac{1}{n_i}\sum\limits_{x\in c_i}dist(x,z_i)^2}
 
 \begin{itemize}
 	\setlength{\itemindent}{1cm}
-	\item{$c_i$ adalah cluster}
-	\item{diam($c_i$) adalah diameter cluster $c_i$}
+	\item{$c_i$ adalah \textit{cluster}}
+	\item{diam($c_i$) adalah diameter \textit{cluster} $c_i$}
 	\item{n adalah banyaknya titik}
-	\item{$z_i$ adalah centroid cluster $c_i$}
+	\item{$z_i$ adalah \textit{centroid cluster} $c_i$}
 	\item{dist(a,b) adalah \textit{euclidean distance} antara titik a dan b}
 \end{itemize}
 
@@ -177,7 +176,7 @@ diam(c_i) &= \sqrt{\frac{1}{n_i}\sum\limits_{x\in c_i}dist(x,z_i)^2}
 
 \begin{adjustwidth}{4em}{0pt}
 	
-\hspace{\parindent}Haversine Formula adalah salah satu formula trigonometri yang digunakan untuk menghitung great circle distance, yakni jarak terdekat antara 2 titik pada permukaan bola dengan melalui permukaan bola tersebut. Haversine formula menghitung great circle distance dari 2 titik pada permukaan bola dengan parameter latitude dan longitude dari kedua titik tersebut.
+\hspace{\parindent}\textit{Haversine Formula} adalah salah satu formula trigonometri yang digunakan untuk menghitung \textit{great circle distance}, yakni jarak terdekat antara 2 titik pada permukaan bola dengan melalui permukaan bola tersebut. \textit{Haversine formula} menghitung \textit{great circle distance} dari 2 titik pada permukaan bola dengan parameter \textit{latitude} dan \textit{longitude} dari kedua titik tersebut.
 
 Haversine formula didefinisikan sebagai berikut:
 \begin{align*}
@@ -187,8 +186,8 @@ haversin(\frac{d}{r}) &= haversin(\phi _{2} - \phi _{1}) + cos(\phi _{1})cos(\ph
 	\setlength{\itemindent}{1cm}
 	\item{d adalah \textit{great circle distance} antara tiitk 1 dan 2}
 	\item{r adalah jari-jari bola}
-	\item{$\phi$ adalah latitude}
-	\item{$\lambda$ adalah longitude}
+	\item{$\phi$ adalah \textit{latitude}}
+	\item{$\lambda$ adalah \textit{longitude}}
 	\item{\textit{haversin} adalah fungsi trigonometri $haversin(\theta) = sin^2(\frac{\theta}{2}) = \frac{1-cos(\theta)}{2}$}
 \end{itemize}
 
@@ -197,9 +196,11 @@ haversin(\frac{d}{r}) &= haversin(\phi _{2} - \phi _{1}) + cos(\phi _{1})cos(\ph
 \subsubsection{Isotonic Regression}
 \begin{adjustwidth}{4em}{0pt}
 	
-\hspace{\parindent}Isotonic regression merupakan varian dari algoritma regresi yang memepertahankan arah trend dari perdictor regresi (fungsi regresi dipastikan monoton menaik atau menurun). Secara matematis definisi isotonic regression adalah sebagai berikut : diberikan data dengan nilai a1,a2,...,an, regresi F(x) merupakan fungsi monoton $(F(i) <= F(j) | i <= j)$  dengan nilai $\sum\limits_{i=1}^n({f(i)-a_{i}})^2$ seminimal mungkin.
+\hspace{\parindent}\textit{Isotonic regression} merupakan varian dari algoritma regresi yang memepertahankan arah trend dari \textit{perdictor} regresi (fungsi regresi dipastikan monoton menaik atau menurun). Secara matematis definisi \textit{isotonic regression} adalah sebagai berikut :
 
-Sifat monotonik ini dimanfaatkan untuk melakukan pendekatan  non-linear yang lebih akurat akan tetapi tidak membuat aproksimasinya menjadi overfit. Pada data yang bersangkutan, regresi ini digunakan untuk mengaproksimasi perkembangan divergensi profit pemesanan taxi.
+Diberikan data dengan nilai a1,a2,...,an, regresi F(x) merupakan fungsi monoton $(F(i) <= F(j) | i <= j)$  dengan nilai $\sum\limits_{i=1}^n({f(i)-a_{i}})^2$ seminimal mungkin.
+
+Sifat monotonik ini dimanfaatkan untuk melakukan pendekatan  non-linear yang lebih akurat akan tetapi tidak membuat aproksimasinya menjadi \textit{overfit}. Pada data yang bersangkutan, regresi ini digunakan untuk mengaproksimasi perkembangan divergensi \textit{profit} pemesanan taxi.
 
 \begin{figure}[H]
 	\includegraphics[width=\linewidth]{isotonic.png}
@@ -210,11 +211,11 @@ Sifat monotonik ini dimanfaatkan untuk melakukan pendekatan  non-linear yang leb
 
 \subsubsection{Kullback Leibler Divergence}
 \begin{adjustwidth}{4em}{0pt}
-\hspace{\parindent}Kullback Leibler Divergence merupakan salah satu teknik penghitungan divergensi dari distribusi dua nilai (pada umumnya distribusi probabilitas). Kullback Leibler Divergence pada distribusi data  P dan Q  didefinisikan sebagai 
+\hspace{\parindent}\textit{Kullback Leibler Divergence} merupakan salah satu teknik penghitungan divergensi dari distribusi dua nilai (pada umumnya distribusi probabilitas). \textit{Kullback Leibler Divergence} pada distribusi data  P dan Q  didefinisikan sebagai 
 $D_{Kl}(P||Q) = \sum\limits_{i}P(i)ln\frac{P(i)}{Q(i)}$
 dengan P(i) merupakan nilai tendensi dari data ke-i pada dataset-P dan Q(i) merupakan nilai tendensi dari data ke-i pada dataset-Q.
 
-Pada kasus ini, KL Divergence digunakan untuk menghitung divergensi dari dua nilai estimated score yaitu estimasi probabilitas (persentase) profit dari suatu daerah pada cluster tertentu. Estimated score ini  yang akan menjadi attribute utama untuk membandingkan divergensi profit yang akan dianalisis.
+Pada kasus ini, \textit{KL Divergence} digunakan untuk menghitung divergensi dari dua nilai \textit{estimated score} yaitu estimasi probabilitas (persentase) \textit{profit} dari suatu daerah pada \textit{cluster} tertentu. \textit{Estimated score} ini  yang akan menjadi attribute utama untuk membandingkan divergensi \textit{profit} yang akan dianalisis.
 
 \end{adjustwidth}
 
@@ -230,12 +231,12 @@ Pada kasus ini, KL Divergence digunakan untuk menghitung divergensi dari dua nil
 
 \begin{adjustwidth}{4em}{0pt}
 
-\hspace{\parindent}Sebelum dataset diproses, perlu dilakukan langkah-langkah tertentu terlebih dahulu agar dataset tersebut lebih mudah untuk diproses dan sesuai dengan kriteria yang diinginkan. Langkah-langkah yang diambil dalam preprocessing antara lain:
+\hspace{\parindent}Sebelum dataset diproses, perlu dilakukan langkah-langkah tertentu terlebih dahulu agar dataset tersebut lebih mudah untuk diproses dan sesuai dengan kriteria yang diinginkan. Langkah-langkah yang diambil dalam \textit{preprocessing} antara lain:
 
 \begin{itemize}
 	\item{Data Filtering}
 		
-		Data filtering adalah proses pembuangan data-data yang tidak memenuhi batasan yang ditentukan. Pembuangan data yang tidak memenuhi batasan dilakukan agar hasil penilitian relevan dengan batasan tersebut dan proses evaluasi dan analisa data menjadi lebih mudah dan cepat karena tidak ada data sampah yang terlibat dalam komputasi-komputasi yang dilakukan.
+		\textit{Data filtering} adalah proses pembuangan data-data yang tidak memenuhi batasan yang ditentukan. Pembuangan data yang tidak memenuhi batasan dilakukan agar hasil penilitian relevan dengan batasan tersebut dan proses evaluasi dan analisa data menjadi lebih mudah dan cepat karena tidak ada data sampah yang terlibat dalam komputasi-komputasi yang dilakukan.
 		
 	\item{Data Standardization dan Meta Data Customization}
 		
@@ -243,7 +244,7 @@ Pada kasus ini, KL Divergence digunakan untuk menghitung divergensi dari dua nil
 		
 	\item{Feature Extraction}
 		
-		Feature extraction adalah pengurangan atribut pada dataset apabila ukuran dataset terlalu besar atau ada atribut yang berulang (redundant). Dalam penelitian ini, kami mengabaikan atribut call type, origin call, origin stand, dan taxi id, karena tidak relevan dengan tujuan analisa yang dilakukan.
+		\textit{Feature extraction} adalah pengurangan atribut pada dataset apabila ukuran dataset terlalu besar atau ada atribut yang berulang (\textit{redundant}). Dalam penelitian ini, kami mengabaikan atribut call type, origin call, origin stand, dan taxi id, karena tidak relevan dengan tujuan analisa yang dilakukan.
 		
 \end{itemize}
 
@@ -252,16 +253,16 @@ Pada kasus ini, KL Divergence digunakan untuk menghitung divergensi dari dua nil
 \subsubsection{Modeling}
 \begin{adjustwidth}{4em}{0pt}
 	
-\hspace{\parindent}Setelah melalui tahap preprocessing, data akan dimodelkan untuk menggambarkan distribusi data tersebut dan hubungan antara data yang satu dengan yang lain. Pada penelitian ini, teknik modeling yang digunakan antara lain: 
+\hspace{\parindent}Setelah melalui tahap \textit{preprocessing}, data akan dimodelkan untuk menggambarkan distribusi data tersebut dan hubungan antara data yang satu dengan yang lain. Pada penelitian ini, teknik \textit{modeling} yang digunakan antara lain: 
 
 \begin{itemize}
 	\item{Clustering}
 	
-	Clustering adalah teknik mengelompokkan data yang memiliki kemiripan karakteristik dan menjadikan data yang memiliki kesamaan karakteristik tersebut menjadi 1 kelompok.
+	\textit{Clustering} adalah teknik mengelompokkan data yang memiliki kemiripan karakteristik dan menjadikan data yang memiliki kesamaan karakteristik tersebut menjadi 1 kelompok.
 	
 	\item{Regression Line Fitting}
 	
-	Regression line fitting adalah teknik mengaproksimasi trend data dengan membentuk fungsi regresi yang mendekati distribusi data asli dan melakukan prediksi terhadap fluktuasi data dengan menggunakan fungsi regresi tersebut.
+	\textit{Regression line fitting} adalah teknik mengaproksimasi trend data dengan membentuk fungsi regresi yang mendekati distribusi data asli dan melakukan prediksi terhadap fluktuasi data dengan menggunakan fungsi regresi tersebut.
 	
 \end{itemize}
 
@@ -271,7 +272,7 @@ Pada kasus ini, KL Divergence digunakan untuk menghitung divergensi dari dua nil
 
 \begin{adjustwidth}{4em}{0pt}
 	
-\hspace{\parindent}Inferensi (penarikan kesimpulan) dilakukan terhadap hasil modeling pada langkah sebelumnya dengan menerapkan perhitungan dan konsep matematis dengan pendekatan statistik sehingga diperoleh informasi yang berkaitan dengan tujuan pengolahan data yang telah dipaparkan pada bagian sebelumnya.
+\hspace{\parindent}Inferensi (penarikan kesimpulan) dilakukan terhadap hasil \textit{modeling} pada langkah sebelumnya dengan menerapkan perhitungan dan konsep matematis dengan pendekatan statistik sehingga diperoleh informasi yang berkaitan dengan tujuan pengolahan data yang telah dipaparkan pada bagian sebelumnya.
 
 \end{adjustwidth}
 
@@ -287,7 +288,7 @@ Pada kasus ini, KL Divergence digunakan untuk menghitung divergensi dari dua nil
 	\caption{Rancangan pengolahan dataset}
 \end{figure}
 
-\hspace{\parindent}Langkah pertama yang dilakukan pada data adalah preprocessing sehingga data tersebut siap untuk melalui langkah-langkah berikutnya. Langkah kedua adalah melakukan clustering terhadap data tersebut. Langkah berikutnya yaitu membuat time series, yaitu data berisi pendapatan masing-masing cluster yang diurutkan berdasarkan waktu. Setelah itu, data tersebut akan dibaca dengan terbagi setiap bulannya. Data per bulan tersebut akan melalui sistem scoring kemudian divisualisasi.
+\hspace{\parindent}Langkah pertama yang dilakukan pada data adalah \textit{preprocessing} sehingga data tersebut siap untuk melalui langkah-langkah berikutnya. Langkah kedua adalah melakukan \textit{clustering} terhadap data tersebut. Langkah berikutnya adalah pembuatan \textit{time series}, yaitu data berisi pendapatan masing-masing \textit{cluster} yang diurutkan berdasarkan waktu. Setelah itu, data tersebut akan dibaca dengan terbagi setiap bulannya. Data per bulan tersebut akan melalui sistem \textit{scoring} kemudian divisualisasi.
 
 \end{adjustwidth}
 
@@ -309,7 +310,7 @@ Pada kasus ini, KL Divergence digunakan untuk menghitung divergensi dari dua nil
 
 \begin{adjustwidth}{4em}{0pt}
 	
-\hspace{\parindent}Sebelum memproses data lebih lanjut, langkah pertama yang dilakukan adalah membuang data yang tidak sesuai. Data yang kami buang adalah data yang memiliki stream gps yang tidak lengkap, karena membuat data secara keseluruhan tidak akurat, sementara jumlahnya yang sangat sedikit dibandingkan dengan keseluruhan data hampir tidak menimbulakan pengaruh ketika data dianulir. Selain itu, data yang kami buang adalah data yang tipe harinya bukan hari kerja, karena tidak sesuai untuk analisa dalam batasan yang telah ditentukan.
+\hspace{\parindent}Sebelum memproses data lebih lanjut, langkah pertama yang dilakukan adalah membuang data yang tidak sesuai. Data yang kami buang adalah data yang memiliki \textit{stream gps} yang tidak lengkap, karena membuat data secara keseluruhan tidak akurat, sementara jumlahnya yang sangat sedikit dibandingkan dengan keseluruhan data hampir tidak menimbulakan pengaruh ketika data dianulir. Selain itu, data yang kami buang adalah data yang tipe harinya bukan hari kerja, karena tidak sesuai untuk analisa dalam batasan yang telah ditentukan.
 
 \end{adjustwidth}
 
@@ -317,7 +318,7 @@ Pada kasus ini, KL Divergence digunakan untuk menghitung divergensi dari dua nil
 
 \begin{adjustwidth}{4em}{0pt}
 	
-	\hspace{\parindent}Agar data lebih mudah diproses, atribut-atribut yang tidak sesuai dengan tujuan dari analisa ini dihilangkan dari dataset. Atribut-atribut tersebut antara lain daytype (karena hanya digunakan saat filtering), call type, origin stand, origin call, taxi id, dan trip id.
+	\hspace{\parindent}Agar data lebih mudah diproses, atribut-atribut yang tidak sesuai dengan tujuan dari analisa ini dihilangkan dari dataset. Atribut-atribut tersebut antara lain \textit{daytype} (karena hanya digunakan saat filtering), \textit{call type}, \textit{origin stand}, \textit{origin call}, \textit{taxi id}, dan \textit{trip id}.
 	
 \end{adjustwidth}
 
@@ -325,7 +326,7 @@ Pada kasus ini, KL Divergence digunakan untuk menghitung divergensi dari dua nil
 
 \begin{adjustwidth}{4em}{0pt}
 	
-	\hspace{\parindent}Masing-masing data yang telah difilter dipecah menjadi 2 data yang berbeda. Data x akan dipecah menjadi data x1 dan x2, dimana x1 memuat koordinat awal perjalanan dari x dan x2 memuat koordinat akhir perjalanan dari x. Hal ini dilakukan karena dalam batasan yang ditentukan, data yang diperlukan adalah traffic dari suatu daerah secara keseluruhan, baik dari maupun ke suatu daerah.
+	\hspace{\parindent}Masing-masing data yang telah difilter dipecah menjadi 2 data yang berbeda. Data $x$ akan dipecah menjadi data $x_1$ dan $x_2$, dimana $x_1$ memuat koordinat awal perjalanan dari $x$ dan $x_2$ memuat koordinat akhir perjalanan dari $x$. Hal ini dilakukan karena dalam batasan yang ditentukan, data yang diperlukan adalah \textit{traffic} dari suatu daerah secara keseluruhan, baik dari maupun ke daerah tersebut.
 	
 \end{adjustwidth}
 
@@ -338,11 +339,11 @@ Pada kasus ini, KL Divergence digunakan untuk menghitung divergensi dari dua nil
 	\begin{itemize}
 		\item{Total Distance}
 		
-		Total distance adalah jarak yang dilewati oleh taksi tersebut selama perjalanan. Total Distance dihitung dengan total  great circle distance antar titik pada gps stream. Masing-masing great circle distance tersebut dihitung dengan menggunakan formula Haversine.
+		\textit{Total distance} adalah jarak yang dilewati oleh taksi tersebut selama perjalanan. Total Distance dihitung dengan total \textit{great circle distance} antar titik pada \textit{gps stream}. Masing-masing \textit{great circle distance} tersebut dihitung dengan menggunakan formula Haversine.
 		
 		\item{Gross Profit Estimation}
 		
-		Gross Profit Estimation adalah esitimasi  total keuntungan  yang diperoleh sebuah layanan taksi pada perjalanan tersebut. Gross profit ini digunakan untuk mempermudah representasi data. Esitimasi ini dihitung menggunakan formula yang tidak mengubah proporsi rasio data pemesanan terhadap data lain yang diperoleh berdasarkan time-rate dan distance-rate. Formula yang digunakan adalah
+		\textit{Gross Profit Estimation} adalah esitimasi  total keuntungan  yang diperoleh sebuah layanan taksi pada perjalanan tersebut. \textit{Gross profit} ini digunakan untuk mempermudah representasi data. Esitimasi ini dihitung menggunakan formula yang tidak mengubah proporsi rasio data pemesanan terhadap data lain yang diperoleh berdasarkan \textit{time-rate} dan \textit{distance-rate}. Formula yang digunakan adalah
 		
 		\[
 		f(x) = 
@@ -364,7 +365,7 @@ Pada kasus ini, KL Divergence digunakan untuk menghitung divergensi dari dua nil
 
 \begin{adjustwidth}{4em}{0pt}
 	
-	\hspace{\parindent}Untuk keperluan pengolahan data selanjutnya, data akan diurutkan berdasarkan timestamp.
+	\hspace{\parindent}Untuk keperluan pengolahan data selanjutnya, data akan diurutkan berdasarkan \textit{timestamp}.
 	
 \end{adjustwidth}
 
@@ -372,7 +373,7 @@ Pada kasus ini, KL Divergence digunakan untuk menghitung divergensi dari dua nil
 
 \begin{adjustwidth}{4em}{0pt}
 	
-	\hspace{\parindent}Untuk mempermudah membandingkan dua nilai pada distribusi yang berbeda, penulis melakukan standarisasi nilai dengan menghitung profit probability (persentasi keuntungan pada suatu bulan) pada dataset. Standarisasi dengan pendekatan probabilitas ini menjamin total dari semua nilai pada suatu distribusi menjadi tepat = 1. Penulis juga menggunakan teknik laplace-smoothing untuk menjamin data terhindar dari pembagian dengan 0 dan memperhalus trend distribusi profit. Berikut adalah cara menghitung profit probability untuk setiap data per bulan:
+	\hspace{\parindent}Untuk mempermudah membandingkan dua nilai pada distribusi yang berbeda, penulis melakukan standarisasi nilai dengan menghitung \textit{profit probability} (persentasi keuntungan pada suatu bulan) pada dataset. Standarisasi dengan pendekatan probabilitas ini menjamin total dari semua nilai pada suatu distribusi menjadi tepat = 1. Penulis juga menggunakan teknik \textit{laplace-smoothing} untuk menjamin data terhindar dari pembagian dengan 0 dan memperhalus trend distribusi profit. Berikut adalah cara menghitung \textit{profit probability} untuk setiap data per bulan:
 	
 	\begin{align*}
 	P(i) &= \frac{Profit(i)} {\sum\limits_{j \in M_i} Profit(j)}\\
@@ -397,7 +398,7 @@ Pada kasus ini, KL Divergence digunakan untuk menghitung divergensi dari dua nil
 		\caption{Teknik perhitungan \textit{score} data}
 	\end{figure}
 	
-	\hspace{\parindent}Sistem scoring adalah sistem yang bertujuan memberikan skor terhadap data dalam suatu bulan. Sistem scoring ini menggunakan nilai Kullback-Leibler Divergence sebagai skor terhadap data bulan tersebut. Nilai Kullback-Leibler Divergence ini diperoleh dari perbandingan antara regresi dari nilai bulan sebelumnya dengan nilai-nilai data pada bulan yang dievaluasi.
+	\hspace{\parindent}Sistem \textit{scoring} adalah sistem yang bertujuan memberikan skor terhadap data dalam suatu bulan. Sistem \textit{scoring} ini menggunakan nilai \textit{Kullback-Leibler Divergence} sebagai skor terhadap data bulan tersebut. Nilai \textit{Kullback-Leibler Divergence} ini diperoleh dari perbandingan antara regresi dari nilai bulan sebelumnya dengan nilai-nilai data pada bulan yang dievaluasi.
 	
 \end{adjustwidth}
 
@@ -407,7 +408,7 @@ Pada kasus ini, KL Divergence digunakan untuk menghitung divergensi dari dua nil
 
 \begin{adjustwidth}{4em}{0pt}
 	
-	\hspace{\parindent}Input terhadap preprocess yang kami lakukan adalah dataset asli berupa comma separated value dengan atribut antara lain ID taksi, tipe panggilan, asal panggilan, stand asal, waktu mulai perjalanan, tipe hari perjalanan, ada tidaknya data yang hilang, dan koordinat GPS setiap 15 detik perjalanan.
+	\hspace{\parindent}Input terhadap \textit{preprocess} yang kami lakukan adalah dataset asli berupa \textit{comma separated value} dengan atribut antara lain ID taksi, tipe panggilan, asal panggilan, stand asal, waktu mulai perjalanan, tipe hari perjalanan, ada tidaknya data yang hilang, dan koordinat GPS setiap 15 detik perjalanan.
 	
 \end{adjustwidth}
 
@@ -415,7 +416,7 @@ Pada kasus ini, KL Divergence digunakan untuk menghitung divergensi dari dua nil
 
 \begin{adjustwidth}{4em}{0pt}
 	
-	\hspace{\parindent}Input yang digunakan pada proses clustering adalah dataset hasil preprocess yang telah dilakukan sebelumnya, yakni comma separated value dengan atribut-atribut antara lain waktu mulai perjalanan, posisi latitude, posisi longitude, biaya perjalanan, dan jarak yang ditempuh.
+	\hspace{\parindent}Input yang digunakan pada proses \textit{clustering} adalah dataset hasil \textit{preprocess} yang telah dilakukan sebelumnya, yakni \textit{comma separated value} dengan atribut-atribut antara lain waktu mulai perjalanan, posisi \textit{latitude}, posisi \textit{longitude}, biaya perjalanan, dan jarak yang ditempuh.
 	
 	
 \end{adjustwidth}
@@ -424,7 +425,7 @@ Pada kasus ini, KL Divergence digunakan untuk menghitung divergensi dari dua nil
 
 \begin{adjustwidth}{4em}{0pt}
 	
-	\hspace{\parindent}Input yang digunakan pada proses scoring adalah dataset 2 bulan dari dataset hasil clustering, yakni dataset yang digunakan untuk analisa “bulan ini” dan dataset “bulan lalu”.
+	\hspace{\parindent}Input yang digunakan pada proses \textit{scoring} adalah dataset 2 bulan dari dataset hasil \textit{clustering}, yakni dataset yang digunakan untuk analisa ``bulan ini'' dan dataset ``bulan lalu''.
 	
 	
 \end{adjustwidth}
@@ -433,9 +434,9 @@ Pada kasus ini, KL Divergence digunakan untuk menghitung divergensi dari dua nil
 
 \begin{adjustwidth}{2em}{0pt}
 	
-\hspace{\parindent}Dalam proses clustering, untuk menentukan jumlah cluster yang paling sesuai, dilakukan eksperimen dengan melakukan proses clustering tersebut dengan banyak cluster k = 10 hingga k = 19. Batasan k tersebut diambil berdasarkan pengamatan manual pada peta, dimana terdapat cukup banyak daerah-daerah terseparasi pada data tetapi tidak terlalu banyak, sehingga k hanya dibatasi sampai k = 19. Untuk setiap nilai k, cluster akan di generate dan untuk memilih nilai k terbaik dilakukan perhitungan Davies Bouldin Index untuk setiap nilai k tersebut.
+\hspace{\parindent}Dalam proses \textit{clustering}, untuk menentukan banyak \textit{cluster} yang paling sesuai, dilakukan eksperimen dengan melakukan proses \textit{clustering} tersebut dengan banyak \textit{cluster} k = 10 hingga k = 19. Batasan k tersebut diambil berdasarkan pengamatan manual pada peta, dimana terdapat cukup banyak daerah-daerah terseparasi pada data tetapi tidak terlalu banyak, sehingga k hanya dibatasi sampai k = 19. Untuk setiap nilai k, \textit{cluster} akan di \textit{generate} dan untuk memilih nilai k terbaik dilakukan perhitungan \textit{Davies Bouldin Index} untuk setiap nilai k tersebut.
 
-Hasil dari perhitungan Davies Bouldin Index adalah sebagai berikut: 
+Hasil dari perhitungan \textit{Davies Bouldin Index} adalah sebagai berikut: 
 
 \begin{itemize}
 	\item{10 Cluster : 25.39045107804417}
@@ -460,7 +461,7 @@ Dari eksperimen ini, diperoleh banyak cluster yang paling representatif, yakni k
 
 \begin{adjustwidth}{4em}{0pt}
 	
-	\hspace{\parindent}Output dari preprocess terhadap dataset asli adalah dataset yang sudah sesuai dengan batasan-batasan yang telah ditentukan dalam analisa ini. Dataset yang sesuai tersebut memiliki atribut antara lain waktu awal perjalanan, posisi latitude, posisi longitude, biaya perjalanan, dan jarak yang ditempuh, yang merupakan hasil pembagian dua tiap data yang sesuai pada dataset asli.
+	\hspace{\parindent}Output dari \textit{preprocess} terhadap dataset asli adalah dataset yang sudah sesuai dengan batasan-batasan yang telah ditentukan dalam analisa ini. Dataset yang sesuai tersebut memiliki atribut antara lain waktu awal perjalanan, posisi \textit{latitude}, posisi \textit{longitude}, biaya perjalanan, dan jarak yang ditempuh, yang merupakan hasil pembagian dua tiap data yang sesuai pada dataset asli.
 
 \end{adjustwidth}
 
@@ -468,7 +469,7 @@ Dari eksperimen ini, diperoleh banyak cluster yang paling representatif, yakni k
 
 \begin{adjustwidth}{4em}{0pt}
 	
-	\hspace{\parindent}Output dari hasil clustering adalah dataset yang setiap datanya telah diberi label cluster index, yaitu cluster letak data tersebut. Karena DBI terkecil diperoleh untuk k=15, maka banyak cluster yang digunakan untuk analisis adalah 15. Berikut adalah detail cluster yang digunakan:
+	\hspace{\parindent}Output dari proses \textit{clustering} adalah dataset yang setiap datanya telah diberi label \textit{cluster index}, yaitu \textit{cluster} letak data tersebut. Karena DBI terkecil diperoleh untuk k=15, maka banyak \textit{cluster} yang digunakan untuk analisis adalah 15. Berikut adalah detail \textit{cluster} yang digunakan:
 
 \end{adjustwidth}
 
@@ -574,23 +575,23 @@ Dari eksperimen ini, diperoleh banyak cluster yang paling representatif, yakni k
 
 \section{Analisis}
 
-Pada eksperimen yang dipaparkan pada bagian sebelumnya, banyak cluster yang memiliki nilai Davies Bouldin Index terkecil adalah 15 cluster. Hasil detail dari clustering dengan banyak k = 15 telah disajikan pada bagian output clustering yang telah dibahas sebelumnya.
+Pada eksperimen yang dipaparkan pada bagian sebelumnya, banyak cluster yang memiliki nilai\textit{ Davies Bouldin Index} terkecil adalah 15 cluster. Hasil detail dari \textit{clustering} dengan banyak k = 15 telah disajikan pada bagian output \textit{clustering} yang telah dibahas sebelumnya.
 
-Seluruh hasil komputasi statistik pada data yang diklasifikasikan dari cluster-cluster tersebut dapat divisualisasikan menjadi sebagai berikut:
+Seluruh hasil komputasi statistik pada data yang diklasifikasikan dari \textit{cluster-cluster} tersebut dapat divisualisasikan menjadi sebagai berikut:
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\linewidth]{Line/Line_All_Cost.jpg}
-	\caption{Data total cost setiap cluster}
+	\caption{Data\textit{ total cost} setiap cluster}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\linewidth]{Line_All_Probability.jpg}
-	\caption{Data total cost setelah dikonversi menjadi probabilitas}
+	\caption{Data \textit{total cost} setelah dikonversi menjadi probabilitas}
 \end{figure}
 
-Dari hasil tersebut dilakukan plotting data dengan perkembangan profit  untuk setiap bulannya, hasil visualisasi tersebut adalah sebagai berikut:
+Dari hasil tersebut dilakukan \textit{plotting} data dengan perkembangan \textit{profit} untuk setiap bulannya, hasil visualisasi tersebut adalah sebagai berikut:
 
 \begin{figure}[H]
 	\centering
@@ -668,7 +669,7 @@ Dari hasil tersebut dilakukan plotting data dengan perkembangan profit  untuk se
 	\caption{Visualisasi Bulan Keduabelas\\$KL Divergence = 0.07129923008134906$}
 \end{figure}
 
-Dari hasil keseluruhan tersebut fenomena anomali dengan  perbedaan keuntungan paling tinggi (nilai divergen paling tinggi) terdapat pada bulan 10, yaitu cluster yang terpusat pada daerah Matosinhos. Pada tanggal 4 sampai 11 terdapat kenaikan profit yang sangat signifikan dan kembali pada distribusi sebelumnya setelah interval waktu tersebut. Figure p ke q merupakan  plotting frekuensi pemesanan taxi pada peta berdasarkan lokasi gps pada data. daerah Matosinhos mengalami kenaikan frekuensi pemesanan taxi dalam jumlah besar.
+Dari hasil keseluruhan tersebut fenomena anomali dengan  perbedaan keuntungan paling tinggi (nilai divergen paling tinggi) terdapat pada bulan 10, yaitu pada cluster yang terpusat pada daerah Matosinhos. Pada tanggal 4 sampai 11 terdapat kenaikan \textit{profit} yang sangat signifikan dan kembali pada distribusi sebelumnya setelah interval waktu tersebut. Figure p ke q merupakan \textit{plotting} frekuensi pemesanan taksi pada peta berdasarkan lokasi \textit{gps} pada data. Daerah Matosinhos mengalami kenaikan frekuensi pemesanan taksi dalam jumlah besar.
 
 \begin{figure}[H]
 	\centering
@@ -702,10 +703,10 @@ Dari hasil keseluruhan tersebut fenomena anomali dengan  perbedaan keuntungan pa
 
 \section{Kesimpulan}
 
-Dengan menggunakan k-means clustering dengan pemilihan jumlah cluster yang tepat, daerah-daerah yang berdekatan dapat dikelompokkan menjadi kelompok-kelompok yang terpisah dan modular. Centroid setiap cluster juga memudahkan penentuan representasi cluster-cluster tersebut.
+Dengan menggunakan \textit{k-means clustering} dengan pemilihan jumlah \textit{cluster} yang tepat, daerah-daerah yang berdekatan dapat dikelompokkan menjadi kelompok-kelompok yang terpisah dan modular. \textit{Centroid} setiap \textit{cluster} juga memudahkan penentuan representasi \textit{cluster-cluster} tersebut.
 
-Implementasi model regresi yang tepat pada suatu data dapat mempengaruhi hasil estimasi data dan mempengaruhi seberapa cocok regresi tersebut terhadap data asli, seperti pada kasus ini, prediksi menggunakan regresi linier pada data monoton (isotonic regression) memberikan hasil yang lebih representatif dibandingkan data yang tidak monoton.
+Implementasi model regresi yang tepat pada suatu data dapat mempengaruhi hasil estimasi data dan mempengaruhi seberapa cocok regresi tersebut terhadap data asli, seperti pada kasus ini, prediksi menggunakan regresi linier pada data monoton (\textit{isotonic regression}) memberikan hasil yang lebih representatif dibandingkan data yang tidak monoton.
 
-Penghitungan divergensi profit menggunakan KL-Divergence mampu mendeteksi perkembangan keuntungan penggunaan jasa taxi secara cepat dan akurat.
+Penghitungan divergensi profit menggunakan \textit{Kullback Leibler Divergence} mampu mendeteksi perkembangan keuntungan penggunaan jasa taksi secara cepat dan akurat.
 
 \end{document}

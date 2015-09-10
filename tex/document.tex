@@ -204,12 +204,13 @@ haversin(\frac{d}{r}) &= haversin(\phi _{2} - \phi _{1}) + cos(\phi _{1})cos(\ph
 	
 \hspace{\parindent}\textit{Isotonic regression} merupakan varian dari algoritma regresi yang mempertahankan arah trend dari \textit{perdictor} regresi (fungsi regresi dipastikan monoton menaik atau menurun). Secara matematis, definisi \textit{isotonic regression} adalah sebagai berikut:
 
-Diberikan data dengan nilai a1,a2,...,an, regresi F(x) merupakan fungsi monoton $(F(i) <= F(j) | i <= j)$  dengan nilai $\sum\limits_{i=1}^n({f(i)-a_{i}})^2$ seminimal mungkin.
+Diberikan data dengan nilai $a_1,a_2,...,a_n$, regresi F(x) merupakan fungsi monoton $(F(i) <= F(j) | i <= j)$  dengan nilai $\sum\limits_{i=1}^n({f(i)-a_{i}})^2$ seminimal mungkin.
 
 Sifat monotonik ini dimanfaatkan untuk melakukan pendekatan  nonlinear yang lebih akurat akan tetapi tidak membuat aproksimasinya menjadi \textit{overfit}. Pada data yang bersangkutan, regresi ini digunakan untuk mengaproksimasi perkembangan divergensi \textit{profit} pemesanan taksi.
 
 \begin{figure}[H]
-	\includegraphics[width=\linewidth]{isotonic.png}
+	\centering
+	\includegraphics[width=0.7\linewidth]{isotonic.png}
 	\caption{Contoh \textit{isotonic regression}}
 \end{figure}
 

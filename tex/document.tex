@@ -78,7 +78,7 @@ Manfaat yang dapat diperoleh dari analisis ini adalah identifikasi daerah yang m
 
 \section{Batasan}
 
-Pada penelitian ini penulis melakukan pengamatan terhadap data yang memiliki \textit{daytype} A, yakni hari kerja. Hal ini dilakukan karena \textit{daytype} A paling umum ditemui di antara ketiga \textit{daytype} yang ada, sementara setiap \textit{daytype} tentu memiliki distribusi dan karakteristik yang sangat berbeda, sehingga tidak mungkin melakukan evaluasi yang sama terhadap ketiga \textit{daytype} tersebut. Karena data yang harus diproses relatif banyak, algoritma yang digunakan adalah algoritma-algoritma yang memiliki kompleksitas rendah, misalnya \textit{k-means clustering algorithm} dan  \textit{isotonic regression} yang memiliki kompleksitas linear terhadap banyaknya data.
+Pada penelitian ini penulis melakukan pengamatan terhadap data yang memiliki \textit{daytype} A, yakni hari kerja. Hal ini dilakukan karena \textit{daytype} A paling umum ditemui di antara ketiga \textit{daytype} yang ada, sementara setiap \textit{daytype} tentu memiliki distribusi dan karakteristik yang sangat berbeda, sehingga tidak mungkin melakukan evaluasi yang sama terhadap ketiga \textit{daytype} tersebut. Karena data yang harus diproses relatif banyak, algoritma yang digunakan adalah algoritma-algoritma yang mampu berjalan cukup cepat, seperti \textit{k-means clustering algorithm} dan  \textit{isotonic regression}.
 
 \section{Metode}
 
@@ -94,7 +94,7 @@ Pada penelitian ini penulis melakukan pengamatan terhadap data yang memiliki \te
 \subsubsection{ChartJS}
 \begin{adjustwidth}{4em}{0pt}
 	
-\hspace{\parindent}\textit{ChartJS} merupakan \textit{library} dengan bahasa \textit{Javascript} yang digunakan untuk melakukan visualisasi data dalam bentuk \textit{chart}. \textit{ChartJS} ini dipilih karena \textit{library} ini merupakan \textit{library} yang cukup ekstensif dan dapat digunakan untuk berbagai pemodelan data.
+\hspace{\parindent}\textit{ChartJS} merupakan \textit{library} dengan bahasa \textit{Javascript} yang digunakan untuk melakukan visualisasi data dalam bentuk \textit{chart}. \textit{ChartJS} ini dipilih karena \textit{library} ini merupakan \textit{library} yang sangat fleksibel dan dapat digunakan untuk berbagai pemodelan data. Hasil dari visualisasi ini adalah \textit{web-based visualization} sehingga pengaturan tampilan dapat dilakukan dengan mudah.
 
 \end{adjustwidth}
 
@@ -125,7 +125,7 @@ Dataset memiliki 9 atribut, yaitu \textit{trip\_id}, \textit{call\_type}, \texti
 \item{\textit{origin\_call} : ID nomor telepon pemesan (hanya untuk call\_type A)}
 \item{\textit{origin\_stand} : ID stand taksi (hanya untuk call\_type B)}
 \item{\textit{taxi\_id} : ID supir taksi}
-\item{\textit{timestamp} : Unix Timestamp (dalam detik) yang menandakan waktu mulai perjalanan.}
+\item{\textit{timestamp} : \textit{Unix Timestamp} (dalam detik) yang menandakan waktu mulai perjalanan.}
 \item{\textit{day\_type} :  Tipe hari pemesanan (A: hari kerja, B: hari libur, C: hari sebelum hari libur)}
 \item{\textit{missing} : Boolean (False jika data GPS utuh, True jika data GPS ada yang hilang)}
 \item{\textit{polyline} : Data koordinat GPS (WGS84 format) perjalanan taksi setiap 15 detik}
@@ -170,10 +170,10 @@ diam(c_i) &= \sqrt{\frac{1}{n_i}\sum\limits_{x\in c_i}dist(x,z_i)^2}
 \begin{itemize}
 	\setlength{\itemindent}{1cm}
 	\item{$c_i$ adalah \textit{cluster}}
-	\item{diam($c_i$) adalah diameter \textit{cluster} $c_i$}
-	\item{n adalah banyaknya titik}
+	\item{$diam(c_i)$ adalah diameter \textit{cluster} $c_i$}
+	\item{$n$ adalah banyaknya titik}
 	\item{$z_i$ adalah \textit{centroid cluster} $c_i$}
-	\item{dist(a,b) adalah \textit{euclidean distance} antara titik a dan b}
+	\item{$dist(a,b)$ adalah \textit{euclidean distance} antara titik a dan b}
 \end{itemize}
 
 \end{adjustwidth}
@@ -190,11 +190,11 @@ haversin(\frac{d}{r}) &= haversin(\phi _{2} - \phi _{1}) + cos(\phi _{1})cos(\ph
 \end{align*}
 \begin{itemize}
 	\setlength{\itemindent}{1cm}
-	\item{d adalah \textit{great circle distance} antara tiitk 1 dan 2}
-	\item{r adalah jari-jari bola}
+	\item{$d$ adalah \textit{great circle distance} antara tiitk 1 dan 2}
+	\item{$r$ adalah jari-jari bola}
 	\item{$\phi$ adalah \textit{latitude}}
 	\item{$\lambda$ adalah \textit{longitude}}
-	\item{\textit{haversin} adalah fungsi trigonometri $haversin(\theta) = sin^2(\frac{\theta}{2}) = \frac{1-cos(\theta)}{2}$}
+	\item{$haversin$ adalah fungsi trigonometri $haversin(\theta) = sin^2(\frac{\theta}{2}) = \frac{1-cos(\theta)}{2}$}
 \end{itemize}
 
 \end{adjustwidth}
@@ -206,7 +206,7 @@ haversin(\frac{d}{r}) &= haversin(\phi _{2} - \phi _{1}) + cos(\phi _{1})cos(\ph
 
 Diberikan data dengan nilai $a_1,a_2,...,a_n$, regresi F(x) merupakan fungsi monoton $(F(i) <= F(j) | i <= j)$  dengan nilai $\sum\limits_{i=1}^n({f(i)-a_{i}})^2$ seminimal mungkin.
 
-Sifat monotonik ini dimanfaatkan untuk melakukan pendekatan  nonlinear yang lebih akurat akan tetapi tidak membuat aproksimasinya menjadi \textit{overfit}. Pada data yang bersangkutan, regresi ini digunakan untuk mengaproksimasi perkembangan divergensi \textit{profit} pemesanan taksi.
+Sifat monotonik ini dimanfaatkan untuk melakukan pendekatan  nonlinear yang lebih akurat akan tetapi tidak membuat aproksimasinya menjadi \textit{overfit}. Pada data yang bersangkutan, regresi ini digunakan untuk mengaproksimasi perkembangan divergensi profit pemesanan taksi.
 
 \begin{figure}[H]
 	\centering
@@ -222,7 +222,7 @@ Sifat monotonik ini dimanfaatkan untuk melakukan pendekatan  nonlinear yang lebi
 $D_{Kl}(P||Q) = \sum\limits_{i}P(i)ln\frac{P(i)}{Q(i)}$
 dengan P(i) merupakan nilai tendensi dari data ke-i pada dataset-P dan Q(i) merupakan nilai tendensi dari data ke-i pada dataset-Q.
 
-Pada kasus ini, \textit{KL Divergence} digunakan untuk menghitung divergensi dari dua nilai \textit{estimated score} yaitu estimasi probabilitas (persentase) \textit{profit} dari suatu daerah pada \textit{cluster} tertentu. \textit{Estimated score} ini  yang akan menjadi atribut utama untuk membandingkan divergensi \textit{profit} yang akan dianalisis.
+Pada kasus ini, \textit{KL Divergence} digunakan untuk menghitung divergensi dari dua nilai \textit{estimated score} yaitu estimasi probabilitas (persentase) profit dari suatu daerah pada \textit{cluster} tertentu. \textit{Estimated score} ini  yang akan menjadi atribut utama untuk membandingkan divergensi profit yang akan dianalisis.
 
 \end{adjustwidth}
 
@@ -346,7 +346,7 @@ Pada kasus ini, \textit{KL Divergence} digunakan untuk menghitung divergensi dar
 	\begin{itemize}
 		\item{Total Distance}
 		
-		\textit{Total distance} adalah jarak yang dilewati oleh taksi tersebut selama perjalanan. Total Distance dihitung dengan total \textit{great circle distance} antar titik pada \textit{GPS stream}. Masing-masing \textit{great circle distance} tersebut dihitung dengan menggunakan formula Haversine.
+		\textit{Total distance} adalah jarak yang dilewati oleh taksi tersebut selama perjalanan. \textit{Total Distance} dihitung dengan total \textit{great circle distance} antar titik pada \textit{GPS stream}. Masing-masing \textit{great circle distance} tersebut dihitung dengan menggunakan formula Haversine.
 		
 		\item{Gross Profit Estimation}
 		
@@ -361,7 +361,7 @@ Pada kasus ini, \textit{KL Divergence} digunakan untuk menghitung divergensi dar
 		\end{cases}
 		\]
 		
-		dengan baseRate adalah ongkos minimum taksi, minDist jarak minimum perjalanan, mileRate biaya per mil, dist jarak perjalanan, duration lama perjalanan, dan minutesRate biaya perjalanan per menit.
+		dengan \textit{baseRate} adalah ongkos minimum taksi, \textit{minDist} jarak minimum perjalanan, \textit{mileRate} biaya per mil, \textit{dist} jarak perjalanan, \textit{duration} lama perjalanan, dan \textit{minutesRate} biaya perjalanan per menit.
 		
 	\end{itemize}
 	
@@ -384,13 +384,13 @@ Pada kasus ini, \textit{KL Divergence} digunakan untuk menghitung divergensi dar
 	
 	\begin{align*}
 	P(i) &= \frac{Profit(i)} {\sum\limits_{j \in M_i} Profit(j)}\\
-	P(i) &= \frac{Profit(i)+\epsilon}{\sum\limits_{j \in M_i} Profit(j)+n(M)\epsilon} \text{(Laplace Smoothing)}
+	P(i) &= \frac{Profit(i)+\epsilon}{\sum\limits_{j \in M_i} Profit(j)+n(M)\epsilon} \text{\indent(Laplace Smoothing)}
 	\end{align*}
 	
 	\begin{itemize}
 		\setlength{\itemindent}{1cm}
-		\item{P(i) adalah estimasi keuntungan pada hari ke i}
-		\item{M adalah himpunan hari dalam satu bulan}
+		\item{$P(i)$ adalah estimasi keuntungan pada hari ke $i$}
+		\item{$M$ adalah himpunan hari dalam satu bulan}
 	\end{itemize}
 	
 \end{adjustwidth}
@@ -446,16 +446,16 @@ Pada kasus ini, \textit{KL Divergence} digunakan untuk menghitung divergensi dar
 Hasil dari perhitungan \textit{Davies Bouldin Index} adalah sebagai berikut: 
 
 \begin{itemize}
-	\item{10 Cluster : 25.39045107804417}
-	\item{11 Cluster : 25.422136153311417}
-	\item{12 Cluster : 24.83355270788093}
-	\item{13 Cluster : 24.894371593983927}
-	\item{14 Cluster : 24.930897636400257}
-	\item{15 Cluster : 20.077528269926834}
-	\item{16 Cluster : 20.338767774901303}
-	\item{17 Cluster : 24.997422365531364}
-	\item{18 Cluster : 25.019546784641772}
-	\item{19 Cluster : 25.048188086470475}	
+	\item{$10$ $Cluster : 25.39045107804417$}
+	\item{$11$ $Cluster : 25.422136153311417$}
+	\item{$12$ $Cluster : 24.83355270788093$}
+	\item{$13$ $Cluster : 24.894371593983927$}
+	\item{$14$ $Cluster : 24.930897636400257$}
+	\item{$15$ $Cluster : 20.077528269926834$}
+	\item{$16$ $Cluster : 20.338767774901303$}
+	\item{$17$ $Cluster : 24.997422365531364$}
+	\item{$18$ $Cluster : 25.019546784641772$}
+	\item{$19$ $Cluster : 25.048188086470475$}	
 \end{itemize}
 
 Dari eksperimen ini, diperoleh banyak cluster yang paling representatif, yakni k = 15 karena memiliki nilai DBI yang paling rendah.
@@ -582,7 +582,7 @@ Dari eksperimen ini, diperoleh banyak cluster yang paling representatif, yakni k
 
 \section{Analisis}
 
-Pada eksperimen yang dipaparkan pada bagian sebelumnya, banyak cluster yang memiliki nilai\textit{ Davies Bouldin Index} terkecil adalah 15 cluster. Hasil detail dari \textit{clustering} dengan banyak k = 15 telah disajikan pada bagian output \textit{clustering} yang telah dibahas sebelumnya.
+Pada eksperimen yang dipaparkan pada bagian sebelumnya, banyak \textit{cluster} yang memiliki nilai\textit{ Davies Bouldin Index} terkecil adalah 15 cluster. Hasil detail dari \textit{clustering} dengan banyak k = 15 telah disajikan pada bagian output \textit{clustering} yang telah dibahas sebelumnya.
 
 Seluruh hasil komputasi statistik pada data yang diklasifikasikan dari \textit{cluster-cluster} tersebut dapat divisualisasikan menjadi sebagai berikut:
 
@@ -598,7 +598,7 @@ Seluruh hasil komputasi statistik pada data yang diklasifikasikan dari \textit{c
 	\caption{Data \textit{total cost} setelah dikonversi menjadi probabilitas}
 \end{figure}
 
-Dari hasil tersebut dilakukan \textit{plotting} data dengan perkembangan \textit{profit} untuk setiap bulannya, hasil visualisasi tersebut adalah sebagai berikut:
+Dari hasil tersebut dilakukan \textit{plotting} data dengan perkembangan profit untuk setiap bulannya, hasil visualisasi tersebut adalah sebagai berikut:
 
 \begin{figure}[H]
 	\centering
@@ -652,7 +652,7 @@ Dari hasil tersebut dilakukan \textit{plotting} data dengan perkembangan \textit
 	\begin{minipage}{.5\textwidth}
 		\centering
 		\includegraphics[width=.9\linewidth]{Line/Line_Anomaly_09.jpg}
-		\captionof{figure}{Visualisasi Bulan Ketiga$\\KL Divergence = 0.04904454504562369$}
+		\captionof{figure}{Visualisasi Bulan Kesembilan$\\KL Divergence = 0.04904454504562369$}
 	\end{minipage}%
 \end{figure}
 
@@ -676,7 +676,7 @@ Dari hasil tersebut dilakukan \textit{plotting} data dengan perkembangan \textit
 	\caption{Visualisasi Bulan Keduabelas\\$KL Divergence = 0.07129923008134906$}
 \end{figure}
 
-Dari hasil keseluruhan tersebut fenomena anomali dengan  perbedaan keuntungan paling tinggi (nilai divergen paling tinggi) terdapat pada bulan 10, yaitu pada cluster yang terpusat pada daerah Matosinhos. Pada tanggal 4 sampai 11 terdapat kenaikan \textit{profit} yang sangat signifikan dan kembali pada distribusi sebelumnya setelah interval waktu tersebut. Gambar 19 hingga 22 di bawah ini merupakan \textit{plotting} frekuensi pemesanan taksi pada peta berdasarkan lokasi \textit{GPS} pada data. Daerah Matosinhos mengalami kenaikan frekuensi pemesanan taksi dalam jumlah besar.
+Dari hasil keseluruhan tersebut fenomena anomali dengan  perbedaan keuntungan paling tinggi (nilai divergen paling tinggi) terdapat pada bulan 10, yaitu pada \textit{cluster} yang terpusat pada daerah Matosinhos. Pada tanggal 4 sampai 11 terdapat kenaikan profit yang sangat signifikan dan kembali pada distribusi sebelumnya setelah interval waktu tersebut. Gambar 19 hingga 22 di bawah ini merupakan \textit{plotting} frekuensi pemesanan taksi pada peta berdasarkan lokasi \textit{GPS} pada data. Daerah Matosinhos mengalami kenaikan frekuensi pemesanan taksi dalam jumlah besar.
 
 \begin{figure}[H]
 	\centering
@@ -707,6 +707,8 @@ Dari hasil keseluruhan tersebut fenomena anomali dengan  perbedaan keuntungan pa
 		\captionof{figure}{Plot Frekuensi Penggunaan Taksi Bulan Keduabelas}
 	\end{minipage}%
 \end{figure}
+
+Dari gambar 21 dapat dilihat \textit{cluster} daerah Matosinhos mengalami ledakan frekuensi pemesanan taksi pada bulan kesebelas, dibandingkan dengan bulan-bulan sebelumnya. Fakta ini merupakan salah satu hasil yang diperoleh dari analisis divergensi profit ini.
 
 \section{Kesimpulan}
 

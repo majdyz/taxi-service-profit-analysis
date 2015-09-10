@@ -61,7 +61,7 @@ Informasi adalah hal yang sangat penting. Informasi memungkinkan seseorang untuk
 
 Dewasa ini, bentuk konkrit dari informasi yang beredar adalah data. Data beredar dalam jumlah yang sangat banyak sehingga tidak mungkin dapat dilakukan pemprosesan data tersebut satu persatu. Padahal, informasi yang terkandung dalam data tersebut bisa jadi sangatlah bermanfaat. Oleh karena itu, diperlukan metode khusus untuk mengolah data sehingga informasi-informasi yang bermanfaat tersebut dapat diperoleh.
 
-Dalam studi ilmu komputer, terdapat bidang yang khusus mempelajari pengolahan data dalam jumlah besar, yakni data mining. Teknik-teknik dalam data mining memungkinkan pengolahan data besar secara optimal sehingga informasi-informasi yang bermanfaat dapat diperoleh dari data tersebut. Salah satu contoh aplikasi data mining yang akan kami bahas dalam makalah ini adalah pengolahan terhadap dataset pemesanan taksi di daerah Portugal pada tanggal 1 Juli 2013 hingga 30 Juni 2014.
+Dalam studi ilmu komputer, terdapat bidang yang khusus mempelajari pengolahan data dalam jumlah besar, yakni \textit{data mining}. Teknik-teknik dalam \textit{data mining} memungkinkan pengolahan data besar secara optimal sehingga informasi-informasi yang bermanfaat dapat diperoleh dari data tersebut. Salah satu contoh aplikasi \textit{data mining} yang akan kami bahas dalam makalah ini adalah pengolahan terhadap dataset pemesanan taksi di daerah Portugal pada tanggal 1 Juli 2013 hingga 30 Juni 2014.
 
 
 \section{Tujuan dan Manfaat}
@@ -114,15 +114,15 @@ Pada penelitian ini penulis melakukan pengamatan terhadap data yang memiliki \te
 Dataset memiliki 9 atribut, yaitu \textit{trip\_id}, \textit{call\_type}, \textit{origin\_call}, \textit{origin\_stand}, \textit{taxi\_id}, \textit{timestamp}, \textit{day\_type}, \textit{missing}, dan \textit{polyline}. Penjelasan untuk masing-masing atribut adalah sebagai berikut:
 
 \begin{itemize}
-\item{\textit{trip\_id} : ID untuk setiap trip penggunaan taxi}
-\item{\textit{call\_type} : Tipe penggunaan jasa taxi (A : permintaan langsung ke pusat, B : permintaan langsung ke supir taxi, C : penggunaan jasa taxi di tengah jalan)}
+\item{\textit{trip\_id} : ID untuk setiap trip penggunaan taksi}
+\item{\textit{call\_type} : Tipe penggunaan jasa taksi (A : permintaan langsung ke pusat, B : permintaan langsung ke supir taksi, C : penggunaan jasa taksi di tengah jalan)}
 \item{\textit{origin\_call} : ID nomor telepon pemesan (hanya untuk call\_type A)}
-\item{\textit{origin\_stand} : ID stand taxi (hanya untuk call\_type B)}
-\item{\textit{taxi\_id} : ID supir taxi}
+\item{\textit{origin\_stand} : ID stand taksi (hanya untuk call\_type B)}
+\item{\textit{taxi\_id} : ID supir taksi}
 \item{\textit{timestamp} : Unix Timestamp (dalam detik). yg menandakan waktu mulai perjalanan.}
 \item{\textit{day\_type} :  Tipe hari pemesanan (A : hari kerja, B : hari libur, C : hari sebelum hari libur)}
 \item{\textit{missing} : Boolean (False jika data gps utuh, True jika data gps ada yang hilang)}
-\item{\textit{polyline} : Data koordinat gps (WGS84 format) perjalanan taxi selama 15 detik}
+\item{\textit{polyline} : Data koordinat gps (WGS84 format) perjalanan taksi setiap 15 detik}
 \end{itemize}
 
 \end{adjustwidth}
@@ -200,7 +200,7 @@ haversin(\frac{d}{r}) &= haversin(\phi _{2} - \phi _{1}) + cos(\phi _{1})cos(\ph
 
 Diberikan data dengan nilai a1,a2,...,an, regresi F(x) merupakan fungsi monoton $(F(i) <= F(j) | i <= j)$  dengan nilai $\sum\limits_{i=1}^n({f(i)-a_{i}})^2$ seminimal mungkin.
 
-Sifat monotonik ini dimanfaatkan untuk melakukan pendekatan  non-linear yang lebih akurat akan tetapi tidak membuat aproksimasinya menjadi \textit{overfit}. Pada data yang bersangkutan, regresi ini digunakan untuk mengaproksimasi perkembangan divergensi \textit{profit} pemesanan taxi.
+Sifat monotonik ini dimanfaatkan untuk melakukan pendekatan  non-linear yang lebih akurat akan tetapi tidak membuat aproksimasinya menjadi \textit{overfit}. Pada data yang bersangkutan, regresi ini digunakan untuk mengaproksimasi perkembangan divergensi \textit{profit} pemesanan taksi.
 
 \begin{figure}[H]
 	\includegraphics[width=\linewidth]{isotonic.png}
@@ -244,7 +244,7 @@ Pada kasus ini, \textit{KL Divergence} digunakan untuk menghitung divergensi dar
 		
 	\item{Feature Extraction}
 		
-		\textit{Feature extraction} adalah pengurangan atribut pada dataset apabila ukuran dataset terlalu besar atau ada atribut yang berulang (\textit{redundant}). Dalam penelitian ini, kami mengabaikan atribut call type, origin call, origin stand, dan taxi id, karena tidak relevan dengan tujuan analisa yang dilakukan.
+		\textit{Feature extraction} adalah pengurangan atribut pada dataset apabila ukuran dataset terlalu besar atau ada atribut yang berulang (\textit{redundant}). Dalam penelitian ini, kami mengabaikan atribut \textit{call type}, \textit{origin call}, \textit{origin stand}, dan \textit{taxi id}, karena tidak relevan dengan tujuan analisa yang dilakukan.
 		
 \end{itemize}
 
